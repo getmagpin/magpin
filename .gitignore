@@ -1,0 +1,20 @@
+node_modules/
+dist/
+.output/
+.wxt/
+*.log
+.DS_Store
+coverage/
+spikes/**/node_modules/
+spikes/**/model/
+spikes/**/samples/
+spikes/**/real/
+spikes/**/report.*
+
+# Kept private (not published with the code): the product brief, card drafts,
+# experiments and local tool settings.
+/Magpin — Brief produit V1.md
+/Cards/
+/spikes/
+/.impeccable/
+/.claude/

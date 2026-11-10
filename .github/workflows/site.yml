@@ -1,0 +1,39 @@
+# Publishes the website to Cloudflare Pages (https://magpin.pages.dev/) on every
+# push to main that touches it. Needs two repository secrets:
+# CLOUDFLARE_API_TOKEN (permission: Account > Cloudflare Pages > Edit) and
+# CLOUDFLARE_ACCOUNT_ID. Until they exist, the site is built but not published.
+name: Site
+on:
+  push:
+    branches: [main]
+    paths: ['apps/site/**', 'packages/**', 'pnpm-lock.yaml', '.github/workflows/site.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  deployments: write
+concurrency:
+  group: site
+  cancel-in-progress: true
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @magpin/site build
+        env:
+          SITE_URL: https://magpin.pages.dev/
+      - name: Publish to Cloudflare Pages
+        if: env.CLOUDFLARE_API_TOKEN != ''
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy apps/site/dist --project-name=magpin --branch=main

@@ -1,0 +1,795 @@
+{
+ "meta": {
+  "current_page": 1,
+  "next_page": 2,
+  "prev_page": null,
+  "per_page": 100,
+  "total_pages": 2,
+  "total_count": 128,
+  "has_more_pages": true
+ },
+ "data": [
+  {
+   "id": 9613792,
+   "type": "Image",
+   "created_at": "2020-11-23T07:48:34Z",
+   "updated_at": "2026-10-16T10:37:12Z",
+   "base_type": "Block",
+   "title": "Sitterwerk, Dynamic Order, 2006",
+   "state": "available",
+   "visibility": "public",
+   "comment_count": 0,
+   "image": {
+    "alt_text": null,
+    "blurhash": null,
+    "width": 2121,
+    "height": 1268,
+    "src": "https://d2w9rnfcy7mm78.cloudfront.net/9613792/original_08c351c5d78860d9bdb194cd6b4a7dd6.jpg?1606117715",
+    "aspect_ratio": 1.6727,
+    "content_type": "image/jpeg",
+    "filename": "08c351c5d78860d9bdb194cd6b4a7dd6.jpg",
+    "file_size": 1925505,
+    "updated_at": "2020-11-23T07:48:35Z",
+    "small": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI5NjEzNzkyL29yaWdpbmFsXzA4YzM1MWM1ZDc4ODYwZDliZGIxOTRjZDZiNGE3ZGQ2LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NDAwLCJoZWlnaHQiOjQwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI5NjEzNzkyL29yaWdpbmFsXzA4YzM1MWM1ZDc4ODYwZDliZGIxOTRjZDZiNGE3ZGQ2LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6ODAwLCJoZWlnaHQiOjgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+     "width": 400,
+     "height": 239
+    },
+    "medium": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI5NjEzNzkyL29yaWdpbmFsXzA4YzM1MWM1ZDc4ODYwZDliZGIxOTRjZDZiNGE3ZGQ2LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTIwMCwiaGVpZ2h0IjoxMjAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI5NjEzNzkyL29yaWdpbmFsXzA4YzM1MWM1ZDc4ODYwZDliZGIxOTRjZDZiNGE3ZGQ2LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MjQwMCwiaGVpZ2h0IjoyNDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+     "width": 1200,
+     "height": 717
+    },
+    "large": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI5NjEzNzkyL29yaWdpbmFsXzA4YzM1MWM1ZDc4ODYwZDliZGIxOTRjZDZiNGE3ZGQ2LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTgwMCwiaGVpZ2h0IjoxODAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI5NjEzNzkyL29yaWdpbmFsXzA4YzM1MWM1ZDc4ODYwZDliZGIxOTRjZDZiNGE3ZGQ2LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MzYwMCwiaGVpZ2h0IjozNjAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+     "width": 1800,
+     "height": 1076
+    },
+    "square": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI5NjEzNzkyL29yaWdpbmFsXzA4YzM1MWM1ZDc4ODYwZDliZGIxOTRjZDZiNGE3ZGQ2LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTIwMCwiaGVpZ2h0IjoxMjAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI5NjEzNzkyL29yaWdpbmFsXzA4YzM1MWM1ZDc4ODYwZDliZGIxOTRjZDZiNGE3ZGQ2LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MjQwMCwiaGVpZ2h0IjoyNDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+     "width": 1200,
+     "height": 717
+    }
+   }
+  },
+  {
+   "id": 29774986,
+   "type": "Image",
+   "created_at": "2024-08-03T00:29:33Z",
+   "updated_at": "2026-09-21T16:03:24Z",
+   "base_type": "Block",
+   "title": "AN ACCUMULATION OF INFORMATION TAKEN FROM HERE TO THERE (1970)",
+   "state": "available",
+   "visibility": "public",
+   "comment_count": 1,
+   "image": {
+    "alt_text": null,
+    "blurhash": null,
+    "width": 2048,
+    "height": 1372,
+    "src": "https://d2w9rnfcy7mm78.cloudfront.net/29774986/original_7c82b61a80fddb4f99555926decae37d.jpg?1722644975",
+    "aspect_ratio": 1.4927,
+    "content_type": "image/jpeg",
+    "filename": "7c82b61a80fddb4f99555926decae37d.jpg",
+    "file_size": 168432,
+    "updated_at": "2024-08-03T00:29:35Z",
+    "small": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIyOTc3NDk4Ni9vcmlnaW5hbF83YzgyYjYxYTgwZmRkYjRmOTk1NTU5MjZkZWNhZTM3ZC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIyOTc3NDk4Ni9vcmlnaW5hbF83YzgyYjYxYTgwZmRkYjRmOTk1NTU5MjZkZWNhZTM3ZC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjgwMCwiaGVpZ2h0Ijo4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+     "width": 400,
+     "height": 268
+    },
+    "medium": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIyOTc3NDk4Ni9vcmlnaW5hbF83YzgyYjYxYTgwZmRkYjRmOTk1NTU5MjZkZWNhZTM3ZC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEyMDAsImhlaWdodCI6MTIwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIyOTc3NDk4Ni9vcmlnaW5hbF83YzgyYjYxYTgwZmRkYjRmOTk1NTU5MjZkZWNhZTM3ZC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjI0MDAsImhlaWdodCI6MjQwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+     "width": 1200,
+     "height": 804
+    },
+    "large": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIyOTc3NDk4Ni9vcmlnaW5hbF83YzgyYjYxYTgwZmRkYjRmOTk1NTU5MjZkZWNhZTM3ZC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIyOTc3NDk4Ni9vcmlnaW5hbF83YzgyYjYxYTgwZmRkYjRmOTk1NTU5MjZkZWNhZTM3ZC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjM2MDAsImhlaWdodCI6MzYwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+     "width": 1800,
+     "height": 1206
+    },
+    "square": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIyOTc3NDk4Ni9vcmlnaW5hbF83YzgyYjYxYTgwZmRkYjRmOTk1NTU5MjZkZWNhZTM3ZC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEyMDAsImhlaWdodCI6MTIwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIyOTc3NDk4Ni9vcmlnaW5hbF83YzgyYjYxYTgwZmRkYjRmOTk1NTU5MjZkZWNhZTM3ZC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjI0MDAsImhlaWdodCI6MjQwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+     "width": 1200,
+     "height": 804
+    }
+   }
+  },
+  {
+   "id": 5086629,
+   "type": "Image",
+   "created_at": "2019-09-23T20:21:32Z",
+   "updated_at": "2026-11-06T16:04:07Z",
+   "base_type": "Block",
+   "title": "58ad3851-5588-46dd-b152-59ffc80812f6.jpg",
+   "state": "available",
+   "visibility": "public",
+   "comment_count": 0,
+   "image": {
+    "alt_text": null,
+    "blurhash": "L88i3#VWD+og_NWXD*oet6M|M_oc",
+    "width": 750,
+    "height": 734,
+    "src": "https://d2w9rnfcy7mm78.cloudfront.net/5086629/original_e34b0288a1e29ff998e6907e7d9f6fe8.jpg?1569270100",
+    "aspect_ratio": 1.0218,
+    "content_type": "image/jpeg",
+    "filename": "e34b0288a1e29ff998e6907e7d9f6fe8.jpg",
+    "file_size": 634035,
+    "updated_at": "2019-09-23T20:21:40Z",
+    "small": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg2NjI5L29yaWdpbmFsX2UzNGIwMjg4YTFlMjlmZjk5OGU2OTA3ZTdkOWY2ZmU4LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NDAwLCJoZWlnaHQiOjQwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg2NjI5L29yaWdpbmFsX2UzNGIwMjg4YTFlMjlmZjk5OGU2OTA3ZTdkOWY2ZmU4LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6ODAwLCJoZWlnaHQiOjgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+     "width": 400,
+     "height": 391
+    },
+    "medium": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg2NjI5L29yaWdpbmFsX2UzNGIwMjg4YTFlMjlmZjk5OGU2OTA3ZTdkOWY2ZmU4LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTIwMCwiaGVpZ2h0IjoxMjAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg2NjI5L29yaWdpbmFsX2UzNGIwMjg4YTFlMjlmZjk5OGU2OTA3ZTdkOWY2ZmU4LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MjQwMCwiaGVpZ2h0IjoyNDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+     "width": 1200,
+     "height": 1174
+    },
+    "large": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg2NjI5L29yaWdpbmFsX2UzNGIwMjg4YTFlMjlmZjk5OGU2OTA3ZTdkOWY2ZmU4LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTgwMCwiaGVpZ2h0IjoxODAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg2NjI5L29yaWdpbmFsX2UzNGIwMjg4YTFlMjlmZjk5OGU2OTA3ZTdkOWY2ZmU4LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MzYwMCwiaGVpZ2h0IjozNjAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+     "width": 1800,
+     "height": 1762
+    },
+    "square": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg2NjI5L29yaWdpbmFsX2UzNGIwMjg4YTFlMjlmZjk5OGU2OTA3ZTdkOWY2ZmU4LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTIwMCwiaGVpZ2h0IjoxMjAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1MDg2NjI5L29yaWdpbmFsX2UzNGIwMjg4YTFlMjlmZjk5OGU2OTA3ZTdkOWY2ZmU4LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MjQwMCwiaGVpZ2h0IjoyNDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+     "width": 1200,
+     "height": 1174
+    }
+   }
+  },
+  {
+   "id": 4929062,
+   "type": "Text",
+   "created_at": "2019-08-31T07:19:21Z",
+   "updated_at": "2026-11-04T18:45:39Z",
+   "base_type": "Block",
+   "title": null,
+   "state": "available",
+   "visibility": "public",
+   "comment_count": 0,
+   "content": {
+    "markdown": "\u201cAny fact becomes important when it\u2019s connected to another.\u201d \n\n\u2015 Umberto Eco, *Foucault\u2019s Pendulum*",
+    "html": "<p>\u201cAny fact becomes important when it\u2019s connected to another.\u201d </p>\n\n<p>\u2015 Umberto Eco, <em>Foucault\u2019s Pendulum</em></p>",
+    "plain": "\u201cAny fact becomes important when it\u2019s connected to another.\u201d \n\u2015 Umberto Eco, Foucault\u2019s Pendulum"
+   }
+  },
+  {
+   "id": 1829595,
+   "type": "Link",
+   "created_at": "2018-03-01T23:22:28Z",
+   "updated_at": "2024-08-18T19:35:01Z",
+   "base_type": "Block",
+   "title": "Joan Watson",
+   "state": "available",
+   "visibility": "public",
+   "comment_count": 6,
+   "image": {
+    "alt_text": null,
+    "blurhash": "LBSPX]V@~q?bIRM{M{ofNDWBM_oe",
+    "width": 1280,
+    "height": 1280,
+    "src": "https://d2w9rnfcy7mm78.cloudfront.net/1829595/original_df7291cd8148a8b2272cea7c583d3304?1519946559",
+    "aspect_ratio": 1.0,
+    "content_type": "image/png",
+    "filename": "df7291cd8148a8b2272cea7c583d3304",
+    "file_size": 303614,
+    "updated_at": "2018-03-01T23:22:39Z",
+    "small": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIxODI5NTk1L29yaWdpbmFsX2RmNzI5MWNkODE0OGE4YjIyNzJjZWE3YzU4M2QzMzA0IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIxODI5NTk1L29yaWdpbmFsX2RmNzI5MWNkODE0OGE4YjIyNzJjZWE3YzU4M2QzMzA0IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo4MDAsImhlaWdodCI6ODAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+     "width": 400,
+     "height": 400
+    },
+    "medium": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIxODI5NTk1L29yaWdpbmFsX2RmNzI5MWNkODE0OGE4YjIyNzJjZWE3YzU4M2QzMzA0IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMjAwLCJoZWlnaHQiOjEyMDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIxODI5NTk1L29yaWdpbmFsX2RmNzI5MWNkODE0OGE4YjIyNzJjZWE3YzU4M2QzMzA0IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoyNDAwLCJoZWlnaHQiOjI0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+     "width": 1200,
+     "height": 1200
+    },
+    "large": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIxODI5NTk1L29yaWdpbmFsX2RmNzI5MWNkODE0OGE4YjIyNzJjZWE3YzU4M2QzMzA0IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIxODI5NTk1L29yaWdpbmFsX2RmNzI5MWNkODE0OGE4YjIyNzJjZWE3YzU4M2QzMzA0IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjozNjAwLCJoZWlnaHQiOjM2MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+     "width": 1800,
+     "height": 1800
+    },
+    "square": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIxODI5NTk1L29yaWdpbmFsX2RmNzI5MWNkODE0OGE4YjIyNzJjZWE3YzU4M2QzMzA0IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMjAwLCJoZWlnaHQiOjEyMDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIxODI5NTk1L29yaWdpbmFsX2RmNzI5MWNkODE0OGE4YjIyNzJjZWE3YzU4M2QzMzA0IiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoyNDAwLCJoZWlnaHQiOjI0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+     "width": 1200,
+     "height": 1200
+    }
+   },
+   "content": null
+  },
+  {
+   "id": 2824521,
+   "type": "Link",
+   "created_at": "2018-10-05T16:27:00Z",
+   "updated_at": "2026-09-12T18:25:04Z",
+   "base_type": "Block",
+   "title": "Community Memory - Wikipedia",
+   "state": "available",
+   "visibility": "public",
+   "comment_count": 1,
+   "image": {
+    "alt_text": null,
+    "blurhash": "LCQ].,_4Di?b?vM{M{M{M_%2RPxu",
+    "width": 1280,
+    "height": 1280,
+    "src": "https://d2w9rnfcy7mm78.cloudfront.net/2824521/original_b395a961c6e9ad27e1394bafd884fecc.png?1538756823",
+    "aspect_ratio": 1.0,
+    "content_type": "image/png",
+    "filename": "b395a961c6e9ad27e1394bafd884fecc.png",
+    "file_size": 622689,
+    "updated_at": "2018-10-05T16:27:03Z",
+    "small": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIyODI0NTIxL29yaWdpbmFsX2IzOTVhOTYxYzZlOWFkMjdlMTM5NGJhZmQ4ODRmZWNjLnBuZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NDAwLCJoZWlnaHQiOjQwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIyODI0NTIxL29yaWdpbmFsX2IzOTVhOTYxYzZlOWFkMjdlMTM5NGJhZmQ4ODRmZWNjLnBuZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6ODAwLCJoZWlnaHQiOjgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+     "width": 400,
+     "height": 400
+    },
+    "medium": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIyODI0NTIxL29yaWdpbmFsX2IzOTVhOTYxYzZlOWFkMjdlMTM5NGJhZmQ4ODRmZWNjLnBuZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTIwMCwiaGVpZ2h0IjoxMjAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIyODI0NTIxL29yaWdpbmFsX2IzOTVhOTYxYzZlOWFkMjdlMTM5NGJhZmQ4ODRmZWNjLnBuZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MjQwMCwiaGVpZ2h0IjoyNDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+     "width": 1200,
+     "height": 1200
+    },
+    "large": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIyODI0NTIxL29yaWdpbmFsX2IzOTVhOTYxYzZlOWFkMjdlMTM5NGJhZmQ4ODRmZWNjLnBuZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTgwMCwiaGVpZ2h0IjoxODAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIyODI0NTIxL29yaWdpbmFsX2IzOTVhOTYxYzZlOWFkMjdlMTM5NGJhZmQ4ODRmZWNjLnBuZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MzYwMCwiaGVpZ2h0IjozNjAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+     "width": 1800,
+     "height": 1800
+    },
+    "square": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIyODI0NTIxL29yaWdpbmFsX2IzOTVhOTYxYzZlOWFkMjdlMTM5NGJhZmQ4ODRmZWNjLnBuZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTIwMCwiaGVpZ2h0IjoxMjAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIyODI0NTIxL29yaWdpbmFsX2IzOTVhOTYxYzZlOWFkMjdlMTM5NGJhZmQ4ODRmZWNjLnBuZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MjQwMCwiaGVpZ2h0IjoyNDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+     "width": 1200,
+     "height": 1200
+    }
+   },
+   "content": null
+  },
+  {
+   "id": 1453989,
+   "type": "Text",
+   "created_at": "2017-11-24T16:18:51Z",
+   "updated_at": "2026-10-15T02:04:01Z",
+   "base_type": "Block",
+   "title": "Ambient communities of knowledge",
+   "state": "available",
+   "visibility": "public",
+   "comment_count": 3,
+   "content": {
+    "markdown": "In summary, rather than learning by replicating the performance of others or by acquiring knowledge transmitted in instruction, we suggest that learning occurs through centripetal participation in the learning curriculum of the ambient community. Because the place of knowledge is within a community of practice, questions of learning must be addressed within the developmental cycles of that community, a recommendation which creates a diagnostic tool for distinguishing among communities of practice.",
+    "html": "<p>In summary, rather than learning by replicating the performance of others or by acquiring knowledge transmitted in instruction, we suggest that learning occurs through centripetal participation in the learning curriculum of the ambient community. Because the place of knowledge is within a community of practice, questions of learning must be addressed within the developmental cycles of that community, a recommendation which creates a diagnostic tool for distinguishing among communities of practice.</p>",
+    "plain": "In summary, rather than learning by replicating the performance of others or by acquiring knowledge transmitted in instruction, we suggest that learning occurs through centripetal participation in the learning curriculum of the ambient community. Because the place of knowledge is within a community of practice, questions of learning must be addressed within the developmental cycles of that community, a recommendation which creates a diagnostic tool for distinguishing among communities of practice."
+   }
+  },
+  {
+   "id": 2175982,
+   "type": "Image",
+   "created_at": "2018-05-14T18:20:45Z",
+   "updated_at": "2026-10-21T00:02:00Z",
+   "base_type": "Block",
+   "title": "Paul Ford",
+   "state": "available",
+   "visibility": "public",
+   "comment_count": 0,
+   "image": {
+    "alt_text": null,
+    "blurhash": "LHF?6G~qX;NGS+D*Rjoz0KI9rot6",
+    "width": 1050,
+    "height": 750,
+    "src": "https://d2w9rnfcy7mm78.cloudfront.net/2175982/original_0a8da472fc1d1d47a2552efe8ae27a17.png?1526322046",
+    "aspect_ratio": 1.4,
+    "content_type": "image/png",
+    "filename": "0a8da472fc1d1d47a2552efe8ae27a17.png",
+    "file_size": 1326623,
+    "updated_at": "2018-05-14T18:20:46Z",
+    "small": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIyMTc1OTgyL29yaWdpbmFsXzBhOGRhNDcyZmMxZDFkNDdhMjU1MmVmZThhZTI3YTE3LnBuZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NDAwLCJoZWlnaHQiOjQwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIyMTc1OTgyL29yaWdpbmFsXzBhOGRhNDcyZmMxZDFkNDdhMjU1MmVmZThhZTI3YTE3LnBuZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6ODAwLCJoZWlnaHQiOjgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+     "width": 400,
+     "height": 286
+    },
+    "medium": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIyMTc1OTgyL29yaWdpbmFsXzBhOGRhNDcyZmMxZDFkNDdhMjU1MmVmZThhZTI3YTE3LnBuZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTIwMCwiaGVpZ2h0IjoxMjAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIyMTc1OTgyL29yaWdpbmFsXzBhOGRhNDcyZmMxZDFkNDdhMjU1MmVmZThhZTI3YTE3LnBuZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MjQwMCwiaGVpZ2h0IjoyNDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+     "width": 1200,
+     "height": 857
+    },
+    "large": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIyMTc1OTgyL29yaWdpbmFsXzBhOGRhNDcyZmMxZDFkNDdhMjU1MmVmZThhZTI3YTE3LnBuZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTgwMCwiaGVpZ2h0IjoxODAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIyMTc1OTgyL29yaWdpbmFsXzBhOGRhNDcyZmMxZDFkNDdhMjU1MmVmZThhZTI3YTE3LnBuZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MzYwMCwiaGVpZ2h0IjozNjAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+     "width": 1800,
+     "height": 1286
+    },
+    "square": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIyMTc1OTgyL29yaWdpbmFsXzBhOGRhNDcyZmMxZDFkNDdhMjU1MmVmZThhZTI3YTE3LnBuZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTIwMCwiaGVpZ2h0IjoxMjAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIyMTc1OTgyL29yaWdpbmFsXzBhOGRhNDcyZmMxZDFkNDdhMjU1MmVmZThhZTI3YTE3LnBuZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MjQwMCwiaGVpZ2h0IjoyNDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+     "width": 1200,
+     "height": 857
+    }
+   }
+  },
+  {
+   "id": 27845,
+   "type": "Image",
+   "created_at": "2012-07-20T20:28:23Z",
+   "updated_at": "2026-10-16T13:33:21Z",
+   "base_type": "Block",
+   "title": "Bits & Pieces - Version 2",
+   "state": "available",
+   "visibility": "public",
+   "comment_count": 0,
+   "image": {
+    "alt_text": null,
+    "blurhash": "LA8z=N-;00D%?bxuIUWB9FWBxut7",
+    "width": 1024,
+    "height": 683,
+    "src": "https://d2w9rnfcy7mm78.cloudfront.net/27845/original_05e30559ef858a937f677721982e24f8.jpg?1342816110",
+    "aspect_ratio": 1.4993,
+    "content_type": "image/jpeg",
+    "filename": "05e30559ef858a937f677721982e24f8.jpg",
+    "file_size": 327448,
+    "updated_at": "2012-07-20T20:28:30Z",
+    "small": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIyNzg0NS9vcmlnaW5hbF8wNWUzMDU1OWVmODU4YTkzN2Y2Nzc3MjE5ODJlMjRmOC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIyNzg0NS9vcmlnaW5hbF8wNWUzMDU1OWVmODU4YTkzN2Y2Nzc3MjE5ODJlMjRmOC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjgwMCwiaGVpZ2h0Ijo4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+     "width": 400,
+     "height": 267
+    },
+    "medium": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIyNzg0NS9vcmlnaW5hbF8wNWUzMDU1OWVmODU4YTkzN2Y2Nzc3MjE5ODJlMjRmOC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEyMDAsImhlaWdodCI6MTIwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIyNzg0NS9vcmlnaW5hbF8wNWUzMDU1OWVmODU4YTkzN2Y2Nzc3MjE5ODJlMjRmOC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjI0MDAsImhlaWdodCI6MjQwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+     "width": 1200,
+     "height": 800
+    },
+    "large": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIyNzg0NS9vcmlnaW5hbF8wNWUzMDU1OWVmODU4YTkzN2Y2Nzc3MjE5ODJlMjRmOC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIyNzg0NS9vcmlnaW5hbF8wNWUzMDU1OWVmODU4YTkzN2Y2Nzc3MjE5ODJlMjRmOC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjM2MDAsImhlaWdodCI6MzYwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+     "width": 1800,
+     "height": 1201
+    },
+    "square": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIyNzg0NS9vcmlnaW5hbF8wNWUzMDU1OWVmODU4YTkzN2Y2Nzc3MjE5ODJlMjRmOC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEyMDAsImhlaWdodCI6MTIwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIyNzg0NS9vcmlnaW5hbF8wNWUzMDU1OWVmODU4YTkzN2Y2Nzc3MjE5ODJlMjRmOC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjI0MDAsImhlaWdodCI6MjQwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+     "width": 1200,
+     "height": 800
+    }
+   }
+  },
+  {
+   "id": 996762,
+   "type": "Image",
+   "created_at": "2017-04-27T20:31:50Z",
+   "updated_at": "2026-10-26T07:34:18Z",
+   "base_type": "Block",
+   "title": "First Papers of Surrealism, Installation View",
+   "state": "available",
+   "visibility": "public",
+   "comment_count": 1,
+   "image": {
+    "alt_text": null,
+    "blurhash": "L7Ci~;ayayD%~q?bM{j[-;-;WBxu",
+    "width": 1388,
+    "height": 1036,
+    "src": "https://d2w9rnfcy7mm78.cloudfront.net/996762/original_02b0b55d7d45b9018f0b0289aeabca18.jpg?1493325115",
+    "aspect_ratio": 1.3398,
+    "content_type": "image/jpeg",
+    "filename": "02b0b55d7d45b9018f0b0289aeabca18.jpg",
+    "file_size": 772076,
+    "updated_at": "2017-04-27T20:31:55Z",
+    "small": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI5OTY3NjIvb3JpZ2luYWxfMDJiMGI1NWQ3ZDQ1YjkwMThmMGIwMjg5YWVhYmNhMTguanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI5OTY3NjIvb3JpZ2luYWxfMDJiMGI1NWQ3ZDQ1YjkwMThmMGIwMjg5YWVhYmNhMTguanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo4MDAsImhlaWdodCI6ODAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+     "width": 400,
+     "height": 299
+    },
+    "medium": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI5OTY3NjIvb3JpZ2luYWxfMDJiMGI1NWQ3ZDQ1YjkwMThmMGIwMjg5YWVhYmNhMTguanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMjAwLCJoZWlnaHQiOjEyMDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI5OTY3NjIvb3JpZ2luYWxfMDJiMGI1NWQ3ZDQ1YjkwMThmMGIwMjg5YWVhYmNhMTguanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoyNDAwLCJoZWlnaHQiOjI0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+     "width": 1200,
+     "height": 896
+    },
+    "large": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI5OTY3NjIvb3JpZ2luYWxfMDJiMGI1NWQ3ZDQ1YjkwMThmMGIwMjg5YWVhYmNhMTguanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI5OTY3NjIvb3JpZ2luYWxfMDJiMGI1NWQ3ZDQ1YjkwMThmMGIwMjg5YWVhYmNhMTguanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjozNjAwLCJoZWlnaHQiOjM2MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+     "width": 1800,
+     "height": 1344
+    },
+    "square": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI5OTY3NjIvb3JpZ2luYWxfMDJiMGI1NWQ3ZDQ1YjkwMThmMGIwMjg5YWVhYmNhMTguanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMjAwLCJoZWlnaHQiOjEyMDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI5OTY3NjIvb3JpZ2luYWxfMDJiMGI1NWQ3ZDQ1YjkwMThmMGIwMjg5YWVhYmNhMTguanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoyNDAwLCJoZWlnaHQiOjI0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+     "width": 1200,
+     "height": 896
+    }
+   }
+  },
+  {
+   "id": 854486,
+   "type": "Image",
+   "created_at": "2017-01-26T22:50:28Z",
+   "updated_at": "2026-11-08T03:18:11Z",
+   "base_type": "Block",
+   "title": "Pablo Picasso, Constellation Drawings, 1924",
+   "state": "available",
+   "visibility": "public",
+   "comment_count": 4,
+   "image": {
+    "alt_text": null,
+    "blurhash": "LaM7lexv01WBt7ofayWBofazayj@",
+    "width": 500,
+    "height": 687,
+    "src": "https://d2w9rnfcy7mm78.cloudfront.net/854486/original_0a25ce7437e8388f2a465df7d7593e86.jpg?1485471036",
+    "aspect_ratio": 0.7278,
+    "content_type": "image/jpeg",
+    "filename": "0a25ce7437e8388f2a465df7d7593e86.jpg",
+    "file_size": 155065,
+    "updated_at": "2017-01-26T22:50:36Z",
+    "small": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI4NTQ0ODYvb3JpZ2luYWxfMGEyNWNlNzQzN2U4Mzg4ZjJhNDY1ZGY3ZDc1OTNlODYuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI4NTQ0ODYvb3JpZ2luYWxfMGEyNWNlNzQzN2U4Mzg4ZjJhNDY1ZGY3ZDc1OTNlODYuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo4MDAsImhlaWdodCI6ODAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+     "width": 291,
+     "height": 400
+    },
+    "medium": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI4NTQ0ODYvb3JpZ2luYWxfMGEyNWNlNzQzN2U4Mzg4ZjJhNDY1ZGY3ZDc1OTNlODYuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMjAwLCJoZWlnaHQiOjEyMDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI4NTQ0ODYvb3JpZ2luYWxfMGEyNWNlNzQzN2U4Mzg4ZjJhNDY1ZGY3ZDc1OTNlODYuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoyNDAwLCJoZWlnaHQiOjI0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+     "width": 873,
+     "height": 1200
+    },
+    "large": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI4NTQ0ODYvb3JpZ2luYWxfMGEyNWNlNzQzN2U4Mzg4ZjJhNDY1ZGY3ZDc1OTNlODYuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI4NTQ0ODYvb3JpZ2luYWxfMGEyNWNlNzQzN2U4Mzg4ZjJhNDY1ZGY3ZDc1OTNlODYuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjozNjAwLCJoZWlnaHQiOjM2MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+     "width": 1310,
+     "height": 1800
+    },
+    "square": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI4NTQ0ODYvb3JpZ2luYWxfMGEyNWNlNzQzN2U4Mzg4ZjJhNDY1ZGY3ZDc1OTNlODYuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMjAwLCJoZWlnaHQiOjEyMDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI4NTQ0ODYvb3JpZ2luYWxfMGEyNWNlNzQzN2U4Mzg4ZjJhNDY1ZGY3ZDc1OTNlODYuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoyNDAwLCJoZWlnaHQiOjI0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+     "width": 873,
+     "height": 1200
+    }
+   }
+  },
+  {
+   "id": 841357,
+   "type": "Image",
+   "created_at": "2017-01-19T20:54:09Z",
+   "updated_at": "2026-11-02T12:49:04Z",
+   "base_type": "Block",
+   "title": "Sol_LeWitt_1973_All_ifs_ands_or_buts_connected_by_green_lines-alta1.jpg",
+   "state": "available",
+   "visibility": "public",
+   "comment_count": 0,
+   "image": {
+    "alt_text": null,
+    "blurhash": "LKL4sMxt02oy?bj[Iojt-WfkI.j[",
+    "width": 640,
+    "height": 853,
+    "src": "https://d2w9rnfcy7mm78.cloudfront.net/841357/original_7fab5caf7ddd477ac167130f99b520f5.jpg?1484859254",
+    "aspect_ratio": 0.7503,
+    "content_type": "image/jpeg",
+    "filename": "7fab5caf7ddd477ac167130f99b520f5.jpg",
+    "file_size": 198638,
+    "updated_at": "2017-01-19T20:54:14Z",
+    "small": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI4NDEzNTcvb3JpZ2luYWxfN2ZhYjVjYWY3ZGRkNDc3YWMxNjcxMzBmOTliNTIwZjUuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI4NDEzNTcvb3JpZ2luYWxfN2ZhYjVjYWY3ZGRkNDc3YWMxNjcxMzBmOTliNTIwZjUuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo4MDAsImhlaWdodCI6ODAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+     "width": 300,
+     "height": 400
+    },
+    "medium": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI4NDEzNTcvb3JpZ2luYWxfN2ZhYjVjYWY3ZGRkNDc3YWMxNjcxMzBmOTliNTIwZjUuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMjAwLCJoZWlnaHQiOjEyMDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI4NDEzNTcvb3JpZ2luYWxfN2ZhYjVjYWY3ZGRkNDc3YWMxNjcxMzBmOTliNTIwZjUuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoyNDAwLCJoZWlnaHQiOjI0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+     "width": 900,
+     "height": 1200
+    },
+    "large": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI4NDEzNTcvb3JpZ2luYWxfN2ZhYjVjYWY3ZGRkNDc3YWMxNjcxMzBmOTliNTIwZjUuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI4NDEzNTcvb3JpZ2luYWxfN2ZhYjVjYWY3ZGRkNDc3YWMxNjcxMzBmOTliNTIwZjUuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjozNjAwLCJoZWlnaHQiOjM2MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+     "width": 1351,
+     "height": 1800
+    },
+    "square": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI4NDEzNTcvb3JpZ2luYWxfN2ZhYjVjYWY3ZGRkNDc3YWMxNjcxMzBmOTliNTIwZjUuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMjAwLCJoZWlnaHQiOjEyMDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI4NDEzNTcvb3JpZ2luYWxfN2ZhYjVjYWY3ZGRkNDc3YWMxNjcxMzBmOTliNTIwZjUuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoyNDAwLCJoZWlnaHQiOjI0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+     "width": 900,
+     "height": 1200
+    }
+   }
+  },
+  {
+   "id": 399146,
+   "type": "Embed",
+   "created_at": "2015-07-03T14:20:57Z",
+   "updated_at": "2021-12-30T03:29:24Z",
+   "base_type": "Block",
+   "title": "Stanley Kubricks Boxes",
+   "state": "available",
+   "visibility": "public",
+   "comment_count": 1,
+   "embed": {
+    "url": null,
+    "type": "video",
+    "title": "Stanley Kubricks Boxes",
+    "author_name": "JAVARING",
+    "author_url": "http://vimeo.com/javaring",
+    "source_url": null,
+    "thumbnail_url": null,
+    "width": 600,
+    "height": 338,
+    "html": "<iframe class=\"embedly-embed\" src=\"https://cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fplayer.vimeo.com%2Fvideo%2F78314194&wmode=transparent&url=https%3A%2F%2Fvimeo.com%2F78314194&image=http%3A%2F%2Fi.vimeocdn.com%2Fvideo%2F453704780_295x166.jpg&key=95f38852bd9b4f51ba7e5c8900281d06&type=text%2Fhtml&schema=vimeo\" width=\"600\" height=\"338\" scrolling=\"no\" frameborder=\"0\" allowfullscreen></iframe>"
+   },
+   "image": {
+    "alt_text": null,
+    "blurhash": "LIF5~ongj]NHE4WAt7t70MWrj[xa",
+    "width": 295,
+    "height": 166,
+    "src": "https://d2w9rnfcy7mm78.cloudfront.net/399146/original_0e1abfbc42628bb6f2e436deef4af1f2?1435933261",
+    "aspect_ratio": 1.7771,
+    "content_type": "image/jpeg",
+    "filename": "0e1abfbc42628bb6f2e436deef4af1f2",
+    "file_size": 13935,
+    "updated_at": "2015-07-03T14:21:01Z",
+    "small": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIzOTkxNDYvb3JpZ2luYWxfMGUxYWJmYmM0MjYyOGJiNmYyZTQzNmRlZWY0YWYxZjIiLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIzOTkxNDYvb3JpZ2luYWxfMGUxYWJmYmM0MjYyOGJiNmYyZTQzNmRlZWY0YWYxZjIiLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjgwMCwiaGVpZ2h0Ijo4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+     "width": 400,
+     "height": 225
+    },
+    "medium": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIzOTkxNDYvb3JpZ2luYWxfMGUxYWJmYmM0MjYyOGJiNmYyZTQzNmRlZWY0YWYxZjIiLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEyMDAsImhlaWdodCI6MTIwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIzOTkxNDYvb3JpZ2luYWxfMGUxYWJmYmM0MjYyOGJiNmYyZTQzNmRlZWY0YWYxZjIiLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjI0MDAsImhlaWdodCI6MjQwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+     "width": 1200,
+     "height": 675
+    },
+    "large": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIzOTkxNDYvb3JpZ2luYWxfMGUxYWJmYmM0MjYyOGJiNmYyZTQzNmRlZWY0YWYxZjIiLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIzOTkxNDYvb3JpZ2luYWxfMGUxYWJmYmM0MjYyOGJiNmYyZTQzNmRlZWY0YWYxZjIiLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjM2MDAsImhlaWdodCI6MzYwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+     "width": 1800,
+     "height": 1013
+    },
+    "square": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIzOTkxNDYvb3JpZ2luYWxfMGUxYWJmYmM0MjYyOGJiNmYyZTQzNmRlZWY0YWYxZjIiLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEyMDAsImhlaWdodCI6MTIwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiIzOTkxNDYvb3JpZ2luYWxfMGUxYWJmYmM0MjYyOGJiNmYyZTQzNmRlZWY0YWYxZjIiLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjI0MDAsImhlaWdodCI6MjQwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+     "width": 1200,
+     "height": 675
+    }
+   }
+  },
+  {
+   "id": 529716,
+   "type": "Embed",
+   "created_at": "2016-01-25T23:40:45Z",
+   "updated_at": "2026-08-26T15:30:25Z",
+   "base_type": "Block",
+   "title": "Glass Domain - Interlock (1991 detroit)",
+   "state": "available",
+   "visibility": "public",
+   "comment_count": 1,
+   "embed": {
+    "url": null,
+    "type": "video",
+    "title": "Glass Domain - Interlock (1991 detroit)",
+    "author_name": null,
+    "author_url": null,
+    "source_url": null,
+    "thumbnail_url": null,
+    "width": 600,
+    "height": 338,
+    "html": "<iframe class=\"embedly-embed\" src=\"https://cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FRc45ATlYtCs%3Fwmode%3Dtransparent&wmode=transparent&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DRc45ATlYtCs&image=http%3A%2F%2Fi.ytimg.com%2Fvi%2FRc45ATlYtCs%2Fhqdefault.jpg&key=95f38852bd9b4f51ba7e5c8900281d06&type=text%2Fhtml&schema=youtube\" width=\"600\" height=\"338\" scrolling=\"no\" frameborder=\"0\" allowfullscreen></iframe>"
+   },
+   "image": {
+    "alt_text": null,
+    "blurhash": "LGC6u[9E9Yoz4m-;ozWAkSt8%3ax",
+    "width": 480,
+    "height": 360,
+    "src": "https://d2w9rnfcy7mm78.cloudfront.net/529716/original_9f37ed0c8acfcd229a399191e9d34b49?1453765248",
+    "aspect_ratio": 1.3333,
+    "content_type": "image/jpeg",
+    "filename": "9f37ed0c8acfcd229a399191e9d34b49",
+    "file_size": 24136,
+    "updated_at": "2016-01-25T23:40:48Z",
+    "small": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1Mjk3MTYvb3JpZ2luYWxfOWYzN2VkMGM4YWNmY2QyMjlhMzk5MTkxZTlkMzRiNDkiLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMCwiaGVpZ2h0Ijo0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1Mjk3MTYvb3JpZ2luYWxfOWYzN2VkMGM4YWNmY2QyMjlhMzk5MTkxZTlkMzRiNDkiLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjgwMCwiaGVpZ2h0Ijo4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+     "width": 400,
+     "height": 300
+    },
+    "medium": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1Mjk3MTYvb3JpZ2luYWxfOWYzN2VkMGM4YWNmY2QyMjlhMzk5MTkxZTlkMzRiNDkiLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEyMDAsImhlaWdodCI6MTIwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1Mjk3MTYvb3JpZ2luYWxfOWYzN2VkMGM4YWNmY2QyMjlhMzk5MTkxZTlkMzRiNDkiLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjI0MDAsImhlaWdodCI6MjQwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+     "width": 1200,
+     "height": 900
+    },
+    "large": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1Mjk3MTYvb3JpZ2luYWxfOWYzN2VkMGM4YWNmY2QyMjlhMzk5MTkxZTlkMzRiNDkiLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjE4MDAsImhlaWdodCI6MTgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1Mjk3MTYvb3JpZ2luYWxfOWYzN2VkMGM4YWNmY2QyMjlhMzk5MTkxZTlkMzRiNDkiLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjM2MDAsImhlaWdodCI6MzYwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+     "width": 1800,
+     "height": 1350
+    },
+    "square": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1Mjk3MTYvb3JpZ2luYWxfOWYzN2VkMGM4YWNmY2QyMjlhMzk5MTkxZTlkMzRiNDkiLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEyMDAsImhlaWdodCI6MTIwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI1Mjk3MTYvb3JpZ2luYWxfOWYzN2VkMGM4YWNmY2QyMjlhMzk5MTkxZTlkMzRiNDkiLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjI0MDAsImhlaWdodCI6MjQwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+     "width": 1200,
+     "height": 900
+    }
+   }
+  },
+  {
+   "id": 47069,
+   "type": "Attachment",
+   "created_at": "2012-10-19T14:59:29Z",
+   "updated_at": "2026-08-26T12:41:49Z",
+   "base_type": "Block",
+   "title": "The Cognitive Style of PowerPoint",
+   "state": "available",
+   "visibility": "public",
+   "comment_count": 0,
+   "attachment": {
+    "filename": "The_Cognitive_Style_of_PowerPoint.pdf",
+    "content_type": "application/pdf",
+    "file_size": 6003081,
+    "file_extension": "pdf",
+    "updated_at": "2012-10-19T14:59:32Z",
+    "url": "https://attachments.are.na/47069/The_Cognitive_Style_of_PowerPoint.pdf?1350658772"
+   },
+   "image": {
+    "alt_text": null,
+    "blurhash": "LaOWpTkV00t7s:kCWBjZ_3ozIBjZ",
+    "width": 1024,
+    "height": 1327,
+    "src": "https://d2w9rnfcy7mm78.cloudfront.net/47069/original_92936c3ca9bdf4f020121110-2-1t133wd.jpg?1352564212",
+    "aspect_ratio": 0.7717,
+    "content_type": "image/jpeg",
+    "filename": "92936c3ca9bdf4f020121110-2-1t133wd.jpg",
+    "file_size": 270946,
+    "updated_at": "2012-11-10T16:16:52Z",
+    "small": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI0NzA2OS9vcmlnaW5hbF85MjkzNmMzY2E5YmRmNGYwMjAxMjExMTAtMi0xdDEzM3dkLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NDAwLCJoZWlnaHQiOjQwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI0NzA2OS9vcmlnaW5hbF85MjkzNmMzY2E5YmRmNGYwMjAxMjExMTAtMi0xdDEzM3dkLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6ODAwLCJoZWlnaHQiOjgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfSwid2VicCI6eyJxdWFsaXR5Ijo3NX0sImpwZWciOnsicXVhbGl0eSI6NzV9LCJyb3RhdGUiOm51bGx9fQ==",
+     "width": 309,
+     "height": 400
+    },
+    "medium": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI0NzA2OS9vcmlnaW5hbF85MjkzNmMzY2E5YmRmNGYwMjAxMjExMTAtMi0xdDEzM3dkLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTIwMCwiaGVpZ2h0IjoxMjAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI0NzA2OS9vcmlnaW5hbF85MjkzNmMzY2E5YmRmNGYwMjAxMjExMTAtMi0xdDEzM3dkLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MjQwMCwiaGVpZ2h0IjoyNDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+     "width": 926,
+     "height": 1200
+    },
+    "large": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI0NzA2OS9vcmlnaW5hbF85MjkzNmMzY2E5YmRmNGYwMjAxMjExMTAtMi0xdDEzM3dkLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTgwMCwiaGVpZ2h0IjoxODAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI0NzA2OS9vcmlnaW5hbF85MjkzNmMzY2E5YmRmNGYwMjAxMjExMTAtMi0xdDEzM3dkLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MzYwMCwiaGVpZ2h0IjozNjAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+     "width": 1389,
+     "height": 1800
+    },
+    "square": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI0NzA2OS9vcmlnaW5hbF85MjkzNmMzY2E5YmRmNGYwMjAxMjExMTAtMi0xdDEzM3dkLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTIwMCwiaGVpZ2h0IjoxMjAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI0NzA2OS9vcmlnaW5hbF85MjkzNmMzY2E5YmRmNGYwMjAxMjExMTAtMi0xdDEzM3dkLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MjQwMCwiaGVpZ2h0IjoyNDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+     "width": 926,
+     "height": 1200
+    }
+   }
+  },
+  {
+   "id": 9530,
+   "type": "Channel",
+   "created_at": "2013-04-24T09:03:14Z",
+   "updated_at": "2026-10-25T14:43:11Z",
+   "slug": "adam-curtis",
+   "title": "Adam Curtis",
+   "state": "available",
+   "visibility": "public",
+   "owner": {
+    "id": 289,
+    "type": "User",
+    "name": "David Hilmer Rex",
+    "slug": "david-hilmer-rex",
+    "username": "david-hilmer-rex",
+    "avatar": null,
+    "initials": "DHR"
+   },
+   "counts": {
+    "blocks": 32,
+    "channels": 1,
+    "contents": 33,
+    "collaborators": 0
+   }
+  },
+  {
+   "id": 47785,
+   "type": "Attachment",
+   "created_at": "2012-10-23T16:25:00Z",
+   "updated_at": "2026-09-15T17:32:50Z",
+   "base_type": "Block",
+   "title": "Seth Price, Dispersion",
+   "state": "available",
+   "visibility": "public",
+   "comment_count": 0,
+   "attachment": {
+    "filename": "Dispersion08.pdf",
+    "content_type": "application/pdf",
+    "file_size": 5080093,
+    "file_extension": "pdf",
+    "updated_at": "2012-10-23T16:25:14Z",
+    "url": "https://attachments.are.na/47785/Dispersion08.pdf?1351009514"
+   },
+   "image": {
+    "alt_text": null,
+    "blurhash": "LOP6mo?H9{%#%#o~IAQ-*0MdQ-x]",
+    "width": 1024,
+    "height": 1214,
+    "src": "https://d2w9rnfcy7mm78.cloudfront.net/47785/original_3399a82bd3003dd720121110-2-dtdks0.jpg?1352564310",
+    "aspect_ratio": 0.8435,
+    "content_type": "image/jpeg",
+    "filename": "3399a82bd3003dd720121110-2-dtdks0.jpg",
+    "file_size": 132067,
+    "updated_at": "2012-11-10T16:18:30Z",
+    "small": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI0Nzc4NS9vcmlnaW5hbF8zMzk5YTgyYmQzMDAzZGQ3MjAxMjExMTAtMi1kdGRrczAuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDAsImhlaWdodCI6NDAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI0Nzc4NS9vcmlnaW5hbF8zMzk5YTgyYmQzMDAzZGQ3MjAxMjExMTAtMi1kdGRrczAuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo4MDAsImhlaWdodCI6ODAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9LCJ3ZWJwIjp7InF1YWxpdHkiOjc1fSwianBlZyI6eyJxdWFsaXR5Ijo3NX0sInJvdGF0ZSI6bnVsbH19",
+     "width": 337,
+     "height": 400
+    },
+    "medium": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI0Nzc4NS9vcmlnaW5hbF8zMzk5YTgyYmQzMDAzZGQ3MjAxMjExMTAtMi1kdGRrczAuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMjAwLCJoZWlnaHQiOjEyMDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI0Nzc4NS9vcmlnaW5hbF8zMzk5YTgyYmQzMDAzZGQ3MjAxMjExMTAtMi1kdGRrczAuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoyNDAwLCJoZWlnaHQiOjI0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+     "width": 1012,
+     "height": 1200
+    },
+    "large": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI0Nzc4NS9vcmlnaW5hbF8zMzk5YTgyYmQzMDAzZGQ3MjAxMjExMTAtMi1kdGRrczAuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxODAwLCJoZWlnaHQiOjE4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI0Nzc4NS9vcmlnaW5hbF8zMzk5YTgyYmQzMDAzZGQ3MjAxMjExMTAtMi1kdGRrczAuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjozNjAwLCJoZWlnaHQiOjM2MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+     "width": 1518,
+     "height": 1800
+    },
+    "square": {
+     "src": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI0Nzc4NS9vcmlnaW5hbF8zMzk5YTgyYmQzMDAzZGQ3MjAxMjExMTAtMi1kdGRrczAuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMjAwLCJoZWlnaHQiOjEyMDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+     "src_2x": "https://images.are.na/eyJidWNrZXQiOiJhcmVuYV9pbWFnZXMiLCJrZXkiOiI0Nzc4NS9vcmlnaW5hbF8zMzk5YTgyYmQzMDAzZGQ3MjAxMjExMTAtMi1kdGRrczAuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoyNDAwLCJoZWlnaHQiOjI0MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX0sIndlYnAiOnsicXVhbGl0eSI6NzV9LCJqcGVnIjp7InF1YWxpdHkiOjc1fSwicm90YXRlIjpudWxsfX0=",
+     "width": 1012,
+     "height": 1200
+    }
+   }
+  },
+  {
+   "id": 15828,
+   "type": "Channel",
+   "created_at": "2013-12-17T10:02:10Z",
+   "updated_at": "2026-10-16T17:31:12Z",
+   "slug": "as-we-may-think",
+   "title": "As We May Think",
+   "state": "available",
+   "visibility": "public",
+   "owner": {
+    "id": 1555,
+    "type": "User",
+    "name": "Gemma Copeland",
+    "slug": "gemma-copeland",
+    "username": "gemma-copeland",
+    "avatar": "https://static.avatars.are.na/1555/large_6319e8b08d4036ec2d2c7b131844b353.jpg?1692046862",
+    "initials": "GC"
+   },
+   "counts": {
+    "blocks": 22,
+    "channels": 0,
+    "contents": 22,
+    "collaborators": 0
+   }
+  }
+ ]
+}

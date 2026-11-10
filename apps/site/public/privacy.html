@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy · Magpin</title>
+    <meta name="description" content="Magpin has no server, no account and no tracking. What the Chrome extension and the Figma plugin read, keep and send." />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" type="image/png" href="./favicon.png" />
+    <style>
+      :root {
+        color-scheme: light;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #fff;
+        color: #000;
+        font: 16px/1.6 ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      main {
+        max-width: 680px;
+        margin: 0 auto;
+        padding: 40px 20px 80px;
+      }
+      .back {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: #000;
+        font-weight: 600;
+        text-decoration: none;
+      }
+      .back img {
+        width: 26px;
+        height: 26px;
+      }
+      h1 {
+        margin: 48px 0 8px;
+        font-size: clamp(40px, 9vw, 64px);
+        line-height: 1;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+      }
+      .date {
+        margin: 0 0 40px;
+        color: #6f6f6f;
+        font-size: 14px;
+      }
+      h2 {
+        margin: 40px 0 8px;
+        padding-top: 16px;
+        border-top: 1px solid #e6e6e6;
+        font-size: 18px;
+      }
+      p,
+      li {
+        color: #2a2a2a;
+      }
+      ul {
+        padding-left: 20px;
+      }
+      a {
+        color: #000;
+      }
+      code {
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <a class="back" href="./"><img src="./icon.png" alt="" width="26" height="26" />Magpin</a>
+      <h1>Privacy</h1>
+      <p class="date">Last updated November 10, 2026</p>
+
+      <p>
+        Magpin has no server, no account and no tracking. Nothing you do with Magpin is sent to us: there is no “us” to send it to. The Chrome extension
+        and the Figma plugin work on your computer, and only talk to the sites your boards come from.
+      </p>
+
+      <h2>The Chrome extension</h2>
+      <ul>
+        <li>
+          It reads a board only when you click <strong>Collect this board</strong>, on the board page you have open (Pinterest, Are.na, Cosmos or Savee). It
+          collects the addresses of the board's images, its title and its link.
+        </li>
+        <li>For an Are.na channel, it asks Are.na's public API (<code>api.are.na</code>) for the channel's images.</li>
+        <li>
+          Boards you add to your moodboard are kept in Chrome's storage on your computer (<code>chrome.storage.local</code>), until you remove them or clear
+          the moodboard.
+        </li>
+        <li><strong>Copy for Figma</strong> puts the board's image addresses on your clipboard. <strong>Download ZIP</strong> downloads the images from the source site's image servers and saves a file on your computer.</li>
+        <li>It sends no analytics, uses no cookies of its own and runs no code from elsewhere.</li>
+      </ul>
+
+      <h2>The Figma plugin</h2>
+      <ul>
+        <li>It reads what you paste into it (a board copied with the extension) or the ZIP and images you import.</li>
+        <li>
+          It downloads the images straight from their source's image servers (Pinterest, Are.na, Cosmos, Savee) to place them in your Figma file. Once placed,
+          they are part of your file and stored by Figma, under Figma's own privacy policy.
+        </li>
+        <li>Your settings (layout, columns, spacing, palette) are kept on your computer with Figma's plugin storage.</li>
+        <li>It sends no analytics and makes no other request.</li>
+      </ul>
+
+      <h2>This website</h2>
+      <p>A static page: no cookies, no analytics, no third-party scripts. Its fonts are served from the same place as the page.</p>
+
+      <h2>Questions</h2>
+      <p>Write to <a href="mailto:getmagpin@gmail.com">getmagpin@gmail.com</a>.</p>
+    </main>
+  </body>
+</html>

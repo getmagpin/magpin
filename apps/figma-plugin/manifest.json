@@ -1,0 +1,22 @@
+{
+  "name": "Magpin",
+  "id": "magpin-dev",
+  "api": "1.0.0",
+  "main": "dist/code.js",
+  "ui": "dist/ui.html",
+  "editorType": [
+    "figma",
+    "figjam"
+  ],
+  "documentAccess": "dynamic-page",
+  "networkAccess": {
+    "allowedDomains": [
+      "https://i.pinimg.com",
+      "https://d2w9rnfcy7mm78.cloudfront.net",
+      "https://images.are.na",
+      "https://cdn.cosmos.so",
+      "https://*.savee-cdn.com"
+    ],
+    "reasoning": "Magpin downloads the images of the board the user pasted, straight from the image CDN of its source: i.pinimg.com is Pinterest's image CDN; d2w9rnfcy7mm78.cloudfront.net is Are.na's image CDN (original files) and images.are.na serves Are.na's resized images; cdn.cosmos.so is Cosmos's image CDN; *.savee-cdn.com is Savee's image CDN (dm.savee-cdn.com today, other subdomains in Savee's image links). No other request is made."
+  }
+}

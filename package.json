@@ -1,0 +1,28 @@
+{
+  "name": "magpin",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Magpin \u2014 your moodboard arrives already sorted. Chrome extension + Figma plugin.",
+  "type": "module",
+  "packageManager": "pnpm@12.18.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "pnpm --filter @magpin/extension --filter @magpin/figma-plugin --filter @magpin/site run build",
+    "build:extension": "pnpm --filter @magpin/extension build",
+    "build:plugin": "pnpm --filter @magpin/figma-plugin build",
+    "dev:extension": "pnpm --filter @magpin/extension dev",
+    "dev:plugin": "pnpm --filter @magpin/figma-plugin dev",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "pnpm -r typecheck",
+    "dev:site": "pnpm --filter @magpin/site dev",
+    "build:site": "pnpm --filter @magpin/site build"
+  },
+  "devDependencies": {
+    "happy-dom": "^21.0.4",
+    "typescript": "~5.9.3",
+    "vitest": "^5.1.0"
+  }
+}

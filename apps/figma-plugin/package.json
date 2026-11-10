@@ -1,0 +1,25 @@
+{
+  "name": "@magpin/figma-plugin",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Magpin Figma plugin: paste a board, get a sorted moodboard.",
+  "type": "module",
+  "scripts": {
+    "build": "vite build --config vite.main.config.ts && vite build --config vite.ui.config.ts",
+    "dev": "vite build --watch --config vite.ui.config.ts & vite build --watch --config vite.main.config.ts",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@magpin/core": "workspace:*",
+    "@magpin/ui": "workspace:*",
+    "fflate": "^0.8.3",
+    "preact": "^10.29.8"
+  },
+  "devDependencies": {
+    "@figma/plugin-typings": "^1.142.0",
+    "@preact/preset-vite": "^2.10.6",
+    "typescript": "~5.9.3",
+    "vite": "^8.3.6",
+    "vite-plugin-singlefile": "^2.3.4"
+  }
+}

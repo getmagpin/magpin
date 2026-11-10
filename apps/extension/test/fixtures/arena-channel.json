@@ -1,0 +1,14 @@
+{
+ "id": 275,
+ "type": "Channel",
+ "slug": "arena-influences",
+ "title": "Arena Influences",
+ "state": "available",
+ "visibility": "closed",
+ "counts": {
+  "blocks": 126,
+  "channels": 2,
+  "contents": 128,
+  "collaborators": 9
+ }
+}

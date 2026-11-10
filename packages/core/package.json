@@ -1,0 +1,13 @@
+{
+  "name": "@magpin/core",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Shared, tested logic: exchange format, de-duplication, layouts, naming.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json"
+  }
+}

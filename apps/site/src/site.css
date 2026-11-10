@@ -1,0 +1,2461 @@
+/*
+ * Magpin's website. Same system as the extension and the plugin: white page,
+ * black ink, Anton for display, Geist for text, black pills, hairlines.
+ * Motion: ease-out for what arrives, a slow in-out for what travels.
+ */
+
+:root {
+  --g: clamp(20px, 4vw, 40px);
+  --travel: cubic-bezier(0.65, 0, 0.25, 1);
+  --shadow-win: 0 0 0 1px rgb(0 0 0 / 0.07), 0 2px 4px rgb(0 0 0 / 0.04), 0 28px 60px -28px rgb(0 0 0 / 0.32);
+  --shadow-card: 0 0 0 1px rgb(0 0 0 / 0.06), 0 12px 32px -18px rgb(0 0 0 / 0.28);
+  --line: #ebebeb;
+  --wash: #f6f6f6;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  /* Wide demos (the flow's strip, the ticker) never make the page scroll sideways. */
+  overflow-x: clip;
+}
+body {
+  font-size: 16px;
+  overflow-x: clip;
+}
+a {
+  color: inherit;
+}
+img {
+  display: block;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.wrap {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 var(--g);
+}
+.wrap--wide {
+  max-width: 1240px;
+}
+
+.label,
+.eyebrow {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mp-muted);
+}
+.key {
+  display: inline-block;
+  padding: 1px 6px;
+  border-radius: 6px;
+  background: var(--mp-fg);
+  color: var(--mp-bg);
+  font: 600 0.8em/1.3 var(--mp-font);
+  vertical-align: 0.08em;
+}
+
+/* ---------- Reveal on scroll ---------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity 600ms var(--mp-ease-out),
+    transform 700ms var(--mp-ease-out);
+  transition-delay: var(--d, 0ms);
+}
+.reveal.is-seen {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- Titles: words swipe up, one after the other ---------- */
+
+.title {
+  margin: 0;
+  font-family: var(--mp-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1.02;
+  letter-spacing: 0.005em;
+  font-size: clamp(44px, 7vw, 92px);
+  text-wrap: balance;
+}
+.title__word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding: 0.06em 0;
+  margin: -0.06em 0;
+}
+.title__in {
+  display: inline-block;
+  transform: translateY(108%);
+  transition: transform 900ms var(--mp-ease-out);
+  transition-delay: calc(var(--i) * 70ms);
+}
+.title.is-seen .title__in {
+  transform: none;
+}
+.title__last {
+  white-space: nowrap;
+}
+.title .mp-perch {
+  margin-left: 0.12em;
+}
+
+/* ---------- Buttons ---------- */
+
+.cta {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 52px;
+  padding: 0 10px 0 24px;
+  border-radius: 999px;
+  background: var(--mp-fg);
+  color: var(--mp-bg);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    transform 160ms var(--mp-ease-out),
+    background-color 150ms ease,
+    box-shadow 150ms ease;
+}
+.cta__free {
+  display: inline-grid;
+  place-items: center;
+  height: 32px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: var(--mp-bg);
+  color: var(--mp-fg);
+  font-size: 11px;
+}
+.cta--line {
+  padding: 0 24px;
+  background: var(--mp-bg);
+  color: var(--mp-fg);
+  box-shadow: inset 0 0 0 1.5px var(--mp-fg);
+}
+.cta--small {
+  height: 38px;
+  padding: 0 6px 0 16px;
+  font-size: 11px;
+  gap: 8px;
+}
+.cta--small .cta__free {
+  height: 26px;
+  padding: 0 9px;
+  font-size: 10px;
+}
+.cta:active {
+  transform: scale(0.97);
+  transition-duration: 90ms;
+}
+@media (hover: hover) and (pointer: fine) {
+  .cta:not(.cta--line):hover {
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 0.16),
+      0 10px 24px -12px rgb(0 0 0 / 0.5);
+  }
+  .cta--line:hover {
+    background: var(--wash);
+  }
+}
+
+/*
+ * The magpie peeks: its head rises from behind the button's top edge (the
+ * box clips it at that edge), then winks. On the black button the head and
+ * the pill read as one shape.
+ */
+.peek {
+  position: absolute;
+  right: 28px;
+  bottom: 100%;
+  width: 34px;
+  height: 26px;
+  overflow: hidden;
+  pointer-events: none;
+  color: var(--mp-fg);
+}
+.cta--line .peek {
+  right: 34px;
+}
+.peek__head {
+  transform: translateY(104%);
+  transition: transform 220ms var(--mp-ease-out);
+}
+@media (hover: hover) and (pointer: fine) {
+  .cta:hover .peek__head {
+    transform: translateY(12%);
+    transition: transform 460ms cubic-bezier(0.3, 1.45, 0.45, 1);
+  }
+  .cta:hover .peek__head .mp-head__eye {
+    animation: peek-wink 360ms 420ms ease both;
+  }
+}
+@keyframes peek-wink {
+  45% {
+    transform: scaleY(0.12);
+  }
+}
+
+/* ---------- Nav ---------- */
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  height: 68px;
+  padding: 0 var(--g);
+  background: rgb(255 255 255 / 0.86);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 1px 0 transparent;
+  transition:
+    box-shadow 200ms ease,
+    transform 420ms var(--mp-ease-out);
+}
+.nav.is-scrolled {
+  box-shadow: 0 1px 0 var(--line);
+}
+/* The hero has its own buttons: the nav's waits. */
+.nav .cta {
+  transition:
+    opacity 200ms ease,
+    visibility 200ms,
+    transform 160ms var(--mp-ease-out);
+}
+.nav.is-quiet .cta {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.nav__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: -4px;
+  font-family: var(--mp-display);
+  font-size: 21px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.nav__links {
+  display: flex;
+  gap: 26px;
+  margin-left: auto;
+  font-size: 14px;
+}
+.nav__links a,
+.footer__links a {
+  text-decoration: none;
+  background: linear-gradient(currentColor, currentColor) right bottom / 0 1px no-repeat;
+  padding-bottom: 2px;
+  transition: background-size 240ms var(--mp-ease-out);
+}
+@media (hover: hover) and (pointer: fine) {
+  .nav__links a:hover,
+  .footer__links a:hover {
+    background-position: left bottom;
+    background-size: 100% 1px;
+  }
+}
+
+/* ---------- Hero ---------- */
+
+/*
+ * A white page. The magpie hops in, drops a twig in the middle, and the
+ * headline appears either side of it ("Copy a board." · bird · "Paste a
+ * moodboard."); then the two parts, in order, each with its button.
+ */
+.hero {
+  position: relative;
+  display: grid;
+  /* One column, never wider than the page (the ticker's track is much wider). */
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) auto;
+  justify-items: center;
+  min-height: 100svh;
+  padding: 96px var(--g) clamp(24px, 4vh, 40px);
+  text-align: center;
+  overflow: hidden;
+}
+/* The brand as a watermark: the whole screen, barely there, under everything. */
+.hero__mark {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0;
+  transition: opacity 1200ms ease 200ms;
+  /* Fades into white at the top and the bottom: no hard edges. */
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 24%, #000 72%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, #000 24%, #000 72%, transparent);
+}
+.hero__mark text {
+  font-family: var(--mp-display);
+  fill: rgb(0 0 0 / 0.03);
+}
+.hero.is-told .hero__mark {
+  opacity: 1;
+}
+/* Headline, line and buttons: one block, in the middle of the page. */
+.hero__main {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  width: 100%;
+}
+.hero .hero__bird {
+  z-index: 2;
+}
+.hero__twig {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  color: var(--mp-fg);
+  pointer-events: none;
+}
+.hero__twig svg {
+  display: block;
+  overflow: visible;
+}
+/* The bird stands right in the middle; "Copy" and "Paste" either side, level with its middle. */
+.hero__title {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(16px, 2.6vw, 48px);
+  width: 100%;
+  font-size: clamp(64px, min(12vw, 20vh), 230px);
+  line-height: 0.9;
+}
+.hero__half {
+  display: flex;
+  flex-direction: column;
+}
+.hero__half--from {
+  align-items: flex-end;
+  text-align: right;
+}
+.hero__half--to {
+  align-items: flex-start;
+  text-align: left;
+}
+/*
+ * "Copy" is narrower than "Paste": a touch more tracking on one and a touch
+ * less on the other makes them the same width, so the bird in the middle has
+ * the same margin of type on either side.
+ */
+.hero__half--from {
+  letter-spacing: 0.042em;
+  margin-right: -0.042em;
+}
+.hero__half--to {
+  letter-spacing: -0.03em;
+}
+.hero__line {
+  white-space: nowrap;
+}
+
+.hero__slot {
+  display: block;
+  height: clamp(200px, 40vh, 480px);
+  aspect-ratio: 221 / 312;
+}
+.hero__lead {
+  margin: clamp(20px, 3.4vh, 36px) 0 0;
+  max-width: 60ch;
+  font-size: clamp(16px, 1.4vw, 21px);
+  line-height: 1.5;
+  color: #4a4a4a;
+  text-wrap: balance;
+}
+.duo {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-top: clamp(22px, 4vh, 40px);
+}
+.duo__step {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 12px;
+}
+.duo__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mp-muted);
+}
+.duo__n {
+  display: inline-grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--mp-fg);
+  color: var(--mp-bg);
+  font-size: 11px;
+  letter-spacing: 0;
+}
+.duo__then {
+  flex: none;
+  margin-top: 12px;
+  color: var(--mp-fg);
+}
+/* "Works with" over the sources' ticker. */
+.hero__works {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding-top: 28px;
+}
+/* The sources' ticker: a slow loop with a white, blurred fade at each edge. */
+.ticker {
+  position: relative;
+  width: clamp(260px, 38vw, 540px);
+  max-width: 100%;
+  overflow: hidden;
+  /* The edges fade the logos out themselves: nothing white is laid over the watermark. */
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 18%, #000 82%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 18%, #000 82%, transparent);
+}
+.ticker__track {
+  display: flex;
+  width: max-content;
+  animation: ticker 26s linear infinite;
+}
+@media (hover: hover) and (pointer: fine) {
+  .ticker:hover .ticker__track {
+    animation-play-state: paused;
+  }
+}
+.ticker__half {
+  display: flex;
+}
+.ticker__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 34px;
+  padding: 6px 0;
+  font-size: 15px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+@keyframes ticker {
+  to {
+    transform: translateX(-50%);
+  }
+}
+/*
+ * The landed bird is a sticker: grab it and it folds back from the grab point
+ * (the back is blank paper), pull and it comes off, lifted with a shadow; let
+ * go and it sticks where it is.
+ */
+.peel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: filter 220ms ease;
+}
+.peel.is-held {
+  cursor: grabbing;
+}
+.peel.is-lifted {
+  filter: drop-shadow(0 24px 26px rgb(0 0 0 / 0.18));
+}
+.peel__body {
+  position: relative;
+  transition: transform 200ms var(--mp-ease-out);
+}
+.peel__front,
+.peel__back,
+.peel__flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.peel__back {
+  visibility: hidden;
+  pointer-events: none;
+}
+.peel__flap {
+  transform-origin: 0 0;
+  filter: brightness(0.97);
+}
+.peel__paper svg path {
+  fill: #f7f6f2;
+}
+.peel__paper .mp-magpie__gaze {
+  display: none;
+}
+@media (hover: hover) and (pointer: fine) {
+  .peel:not(.is-held):hover .peel__body {
+    transform: scale(1.015) rotate(-0.6deg);
+  }
+}
+
+/* The rest of the hero's text arrives after the headline. */
+.hero__in {
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 260ms ease,
+    transform 300ms var(--mp-ease-out);
+}
+.is-told .hero__in {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 600ms ease var(--d, 0ms),
+    transform 700ms var(--mp-ease-out) var(--d, 0ms);
+}
+.hero:not(.is-told) .duo {
+  pointer-events: none;
+}
+.marks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+}
+.marks__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/*
+ * Up to Chrome's toolbar, where Magpin is pinned once added: a hand-drawn
+ * arrow that draws itself while the hero is on screen (desktop Chromium only).
+ */
+/* Chrome's puzzle icon sits about 165px in from the window's right edge. */
+.toolbar-hint {
+  position: fixed;
+  top: 2px;
+  right: 154px;
+  z-index: 25;
+  display: none;
+  flex-direction: column;
+  align-items: flex-end;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 240ms ease;
+}
+@media (min-width: 900px) {
+  .toolbar-hint {
+    display: flex;
+  }
+}
+.toolbar-hint.is-shown {
+  opacity: 1;
+  transition-delay: 500ms;
+}
+.toolbar-hint svg {
+  overflow: visible;
+}
+.toolbar-hint__line,
+.toolbar-hint__head {
+  fill: none;
+  stroke: var(--mp-fg);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 200ms ease;
+}
+.toolbar-hint.is-shown .toolbar-hint__line {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 900ms cubic-bezier(0.65, 0, 0.35, 1) 600ms;
+}
+.toolbar-hint.is-shown .toolbar-hint__head {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 260ms ease-out 1450ms;
+}
+.toolbar-hint__text {
+  max-width: 16ch;
+  margin: -2px 78px 0 0;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1.35;
+  text-transform: uppercase;
+  text-align: right;
+  color: var(--mp-fg);
+}
+
+@media (max-width: 760px) {
+  .hero {
+    padding: 92px 18px 56px;
+  }
+  .hero__title {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    gap: 6px;
+    font-size: clamp(60px, 22vw, 120px);
+  }
+  .hero__half--from,
+  .hero__half--to {
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0;
+    margin-right: 0;
+  }
+  .hero__half--from {
+    flex-direction: row;
+    gap: 0.25em;
+  }
+  .hero__slot {
+    height: clamp(150px, 24svh, 220px);
+    margin: 4px 0 2px;
+  }
+  .duo {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    width: 100%;
+  }
+  .duo__step .cta {
+    align-self: stretch;
+    justify-content: center;
+  }
+  .duo__then {
+    align-self: center;
+    margin: 0;
+    transform: rotate(90deg) scale(0.6);
+  }
+  .hero__works {
+    width: 100%;
+  }
+  .ticker {
+    width: 100%;
+  }
+}
+
+/* ---------- The flow demo ---------- */
+
+.flow {
+  position: relative;
+  height: 600px;
+  container-type: inline-size;
+  /* Room for the windows' shadows at the sides; the next window stays hidden. */
+  clip-path: inset(-80px -60px 0 -60px);
+  user-select: none;
+}
+.flow__strip {
+  position: absolute;
+  top: 28px;
+  left: 0;
+  display: flex;
+  gap: 140px;
+  padding-left: 24px;
+  transition: transform 1150ms var(--travel);
+}
+.win {
+  position: relative;
+  flex: none;
+  width: calc(100cqw - 48px);
+  height: 640px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: var(--shadow-win);
+  overflow: hidden;
+}
+@container (max-width: 759px) {
+  .win {
+    width: 920px;
+  }
+}
+.win__bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 14px;
+  background: #f7f7f7;
+  box-shadow: inset 0 -1px 0 #e9e9e9;
+}
+.win__lights {
+  display: flex;
+  gap: 7px;
+}
+.win__lights i {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #dcdcdc;
+}
+.win__url {
+  position: absolute;
+  left: 50%;
+  translate: -50% 0;
+  width: min(44%, 380px);
+  height: 26px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 0 0 1px #e6e6e6;
+  font-size: 12px;
+  color: var(--mp-muted);
+}
+.browser {
+  display: flex;
+  height: calc(100% - 40px);
+}
+.board {
+  flex: 1;
+  min-width: 0;
+  padding: 30px 30px 0;
+  overflow: hidden;
+}
+.board__title {
+  font-size: 26px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+.board__meta {
+  margin-top: 4px;
+  font-size: 13px;
+  color: var(--mp-muted);
+}
+.board__grid {
+  margin-top: 22px;
+  column-count: 4;
+  column-gap: 10px;
+}
+.board__pin {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  break-inside: avoid;
+}
+
+.photo {
+  display: block;
+}
+
+/* Magpin's panel, as in the extension. */
+.panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: none;
+  width: 340px;
+  padding: 0 18px;
+  box-shadow: inset 1px 0 0 #e9e9e9;
+  background: #fff;
+}
+/* The thumbnails' window, between the scan line and the dock: it follows the newest row. */
+.panel__view {
+  position: relative;
+  flex: 1 1 0;
+  min-height: 0;
+  margin: 22px 0 228px;
+  overflow: hidden;
+}
+.panel__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px;
+}
+.panel__grid .panel__thumb {
+  aspect-ratio: 4 / 5;
+}
+.panel__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-left: -3px;
+}
+.brand__name {
+  font-family: var(--mp-display);
+  font-size: 18px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.panel__source {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mp-muted);
+}
+.panel__title {
+  margin-top: 6px;
+  font-family: var(--mp-display);
+  font-size: 36px;
+  line-height: 1.02;
+  text-transform: uppercase;
+}
+.panel__meta,
+.panel__row {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mp-muted);
+  font-variant-numeric: tabular-nums;
+}
+.panel__meta {
+  margin-top: 8px;
+}
+.panel__scan {
+  margin-top: 30px;
+}
+.panel__line {
+  position: relative;
+  height: 2px;
+  background: #e9e9e9;
+}
+.panel__fill {
+  position: absolute;
+  inset: 0;
+  background: var(--mp-fg);
+  transform-origin: left center;
+  transition: transform 300ms var(--mp-ease-out);
+}
+.panel__bird {
+  position: absolute;
+  bottom: 2px;
+  transition: left 500ms var(--mp-ease-out);
+}
+.panel__hop {
+  position: relative;
+  display: block;
+  width: 17px;
+  height: 24px;
+  margin-left: -9px;
+  transform-origin: 52% 100%;
+  animation: hop 1s infinite;
+}
+.panel__hop.is-end {
+  animation: none;
+}
+.panel__cheer {
+  left: 52%;
+  top: 6px;
+}
+@keyframes hop {
+  0%,
+  60%,
+  100% {
+    transform: none;
+  }
+  14% {
+    transform: scale(1.07, 0.9);
+  }
+  34% {
+    transform: translateY(-8px) scale(0.96, 1.05);
+  }
+  52% {
+    transform: scale(1.06, 0.92);
+  }
+  74% {
+    transform: rotate(16deg);
+  }
+}
+.panel__row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+/* A new board: the bird waits at the start of the line, over the button. */
+.panel__hop.is-still {
+  animation: none;
+}
+.panel__start {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+.panel__hint {
+  font-size: 11px;
+  color: var(--mp-muted);
+}
+.panel__stop {
+  color: var(--mp-fg);
+}
+.panel__thumb {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.panel__thumb .photo,
+.fsection__cell .photo {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: scale(0.94);
+  transition:
+    opacity 260ms ease,
+    transform 360ms var(--mp-ease-out);
+}
+.panel__thumb.is-in .photo,
+.fsection__cell.is-in .photo {
+  opacity: 1;
+  transform: none;
+}
+.panel__check {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--mp-fg);
+  opacity: 0;
+  transition:
+    opacity 200ms ease,
+    background-color 150ms ease,
+    box-shadow 150ms ease;
+}
+.panel__check::after {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 4px;
+  width: 4px;
+  height: 7px;
+  border: solid #fff;
+  border-width: 0 1.6px 1.6px 0;
+  transform: rotate(42deg);
+}
+.panel__thumb.is-in .panel__check {
+  opacity: 1;
+}
+.panel__dock {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 72px;
+  display: grid;
+  gap: 8px;
+  padding: 14px 18px 0;
+  background: #fff;
+  box-shadow: 0 -1px 0 #ececec;
+}
+.dockbtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 40px;
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: transform 120ms var(--mp-ease-out);
+}
+.dockbtn--wash {
+  background: #f4f4f4;
+}
+.dockbtn--ink {
+  background: var(--mp-fg);
+  color: var(--mp-bg);
+}
+.dockbtn--line {
+  box-shadow: inset 0 0 0 1.5px var(--mp-fg);
+}
+.dockbtn.is-pressed {
+  transform: scale(0.96);
+}
+/* After a copy: the magpie's head pops over the dock and winks. */
+.panel__peek {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  isolation: isolate;
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  padding: 44px 18px 0;
+}
+/* A thick white haze under the message, so it reads over the thumbnails. */
+.panel__peek::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(to bottom, rgb(255 255 255 / 0), rgb(255 255 255 / 0.97) 38%, #fff);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 34%);
+  mask-image: linear-gradient(to bottom, transparent, #000 34%);
+}
+.panel__peek-bird {
+  position: relative;
+  flex: none;
+  width: 40px;
+  height: 40px;
+  clip-path: inset(-40px -40px 0 -40px);
+}
+.panel__peek-bird .mp-magpie {
+  left: -12px;
+  top: 3px;
+  animation: peek-up 520ms var(--mp-ease-out) backwards;
+}
+@keyframes peek-up {
+  from {
+    transform: translateY(44px);
+  }
+  70% {
+    transform: translateY(-3px);
+  }
+}
+.panel__peek-text {
+  display: grid;
+  gap: 2px;
+  padding-bottom: 8px;
+  font-size: 11.5px;
+  color: var(--mp-muted);
+  animation: rise 320ms var(--mp-ease-out) 120ms backwards;
+}
+.panel__peek-text strong {
+  color: var(--mp-fg);
+  font-weight: 600;
+  font-size: 12.5px;
+}
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+/* Figma. */
+.win__bar--figma {
+  background: #fff;
+}
+.figma__file {
+  position: absolute;
+  left: 50%;
+  translate: -50% 0;
+  font-size: 12px;
+  font-weight: 600;
+}
+.figma__share {
+  margin-left: auto;
+  height: 26px;
+  padding: 0 12px;
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  background: var(--mp-fg);
+  color: #fff;
+  font-size: 11.5px;
+  font-weight: 600;
+}
+.figma {
+  position: relative;
+  display: flex;
+  height: calc(100% - 40px);
+}
+.figma__layers {
+  flex: none;
+  width: 210px;
+  padding: 12px 10px;
+  box-shadow: inset -1px 0 0 #e9e9e9;
+  font-size: 11.5px;
+}
+@container (max-width: 1000px) {
+  .figma__layers {
+    width: 170px;
+  }
+}
+.figma__layers-title {
+  padding: 4px 8px 10px;
+  font-weight: 600;
+}
+.figma__layer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 28px;
+  padding: 0 8px;
+  border-radius: 5px;
+  opacity: 0;
+  transform: translateY(4px);
+  transition:
+    opacity 300ms ease,
+    transform 400ms var(--mp-ease-out);
+  white-space: nowrap;
+  overflow: hidden;
+}
+.figma__layer.is-in {
+  opacity: 1;
+  transform: none;
+}
+.figma__layer--child {
+  padding-left: 26px;
+  color: #444;
+}
+.figma__section-icon,
+.figma__rect-icon,
+.figma__frame-icon {
+  flex: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  box-shadow: inset 0 0 0 1.4px #555;
+}
+.figma__section-icon {
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 1.4px #555;
+  background: linear-gradient(#555, #555) 0 0 / 100% 3px no-repeat;
+}
+.figma__frame-icon {
+  background: linear-gradient(#555, #555) 3px 0 / 1.4px 100% no-repeat;
+}
+.figma__canvas {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  background: #f2f2f2;
+  overflow: hidden;
+}
+.fsection {
+  position: absolute;
+  left: 30px;
+  top: 54px;
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+.fsection.is-in {
+  opacity: 1;
+}
+.fsection__label {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  margin-bottom: 6px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #6a6a6a;
+  white-space: nowrap;
+}
+.fsection__body {
+  display: flex;
+  gap: 22px;
+  padding: 18px;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 0 0 1px #dedede;
+}
+.fsection__grid {
+  position: relative;
+  width: calc(6 * 40px + 5 * 4px);
+  height: calc(6 * 40px + 5 * 4px);
+}
+.fsection__cell {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  transform: translate(calc(var(--x) * 44px), calc(var(--y) * 44px));
+  transition: transform 950ms var(--travel);
+}
+.fsection__palette {
+  display: grid;
+  align-content: start;
+  gap: 6px;
+  width: 84px;
+}
+.swatch {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  opacity: 0;
+  transform: translateX(-6px);
+  transition:
+    opacity 300ms ease,
+    transform 420ms var(--mp-ease-out);
+  transition-delay: calc(var(--i) * 70ms);
+}
+.fsection__palette.is-in .swatch {
+  opacity: 1;
+  transform: none;
+}
+.swatch__color {
+  flex: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 3px;
+}
+.swatch__name {
+  font-size: 10px;
+  color: #555;
+  white-space: nowrap;
+}
+
+/* The Magpin plugin window, inside Figma. */
+.plugin {
+  position: absolute;
+  right: 22px;
+  top: 18px;
+  width: 360px;
+  height: 640px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgb(0 0 0 / 0.1), 0 18px 40px -16px rgb(0 0 0 / 0.36);
+  overflow: hidden;
+}
+.plugin__bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 12px;
+  background: #2c2c2c;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+}
+.plugin__bar img {
+  border-radius: 3px;
+}
+.plugin__close {
+  margin-left: auto;
+  opacity: 0.6;
+  font-size: 16px;
+}
+.plugin__body {
+  padding: 0 20px;
+}
+.plugin__top {
+  display: flex;
+  align-items: center;
+  height: 52px;
+}
+.plugin__paste,
+.plugin__stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.plugin__paste .keys {
+  padding-top: 50px;
+}
+.plugin__headline {
+  margin-top: 28px;
+  font-family: var(--mp-display);
+  font-size: 36px;
+  line-height: 1.02;
+  text-transform: uppercase;
+}
+.plugin__sub {
+  margin-top: 8px;
+  max-width: 28ch;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--mp-muted);
+}
+.plugin__sub strong {
+  color: var(--mp-fg);
+  font-weight: 600;
+}
+.plugin__stage .nest {
+  width: 100%;
+  margin-top: 0;
+}
+.plugin__progress {
+  margin-top: 6px;
+  font-family: var(--mp-display);
+  font-size: 40px;
+  line-height: 1;
+}
+.plugin__progress span {
+  color: var(--mp-faint);
+}
+.plugin__preview {
+  display: block;
+}
+.plugin__count {
+  font-family: var(--mp-display);
+  font-size: 72px;
+  line-height: 1;
+}
+.plugin__label {
+  margin-top: 6px;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mp-muted);
+}
+.plugin__board {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+  padding: 10px 0;
+  box-shadow: inset 0 1px 0 #ececec, inset 0 -1px 0 #ececec;
+  font-size: 13px;
+  font-weight: 500;
+}
+.plugin__muted {
+  margin-left: auto;
+  color: var(--mp-muted);
+}
+.plugin__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 44px;
+  box-shadow: inset 0 -1px 0 #ececec;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mp-muted);
+}
+/* The preview, as in the plugin: the sketch of the moodboard to come. */
+.psketch {
+  position: relative;
+  display: block;
+  height: 138px;
+  margin-bottom: 16px;
+  padding: 10px 12px 0;
+  border-radius: 12px;
+  background: #f4f4f3;
+  box-shadow: inset 0 0 0 1px #ececec;
+  overflow: hidden;
+}
+.psketch__label {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  font-size: 9.5px;
+  font-weight: 600;
+  line-height: 12px;
+  white-space: nowrap;
+  color: #8a8a8a;
+}
+.psketch__label--palette {
+  left: auto;
+  right: 12px;
+  width: 74px;
+}
+.psketch__section,
+.psketch__palette {
+  position: absolute;
+  top: 26px;
+  border-radius: 4px 4px 0 0;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgb(0 0 0 / 0.06);
+}
+/* Six columns of grey blocks, light to dark; it runs on past the view. */
+.psketch__section {
+  left: 12px;
+  right: 96px;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  align-content: start;
+  gap: 1.6px;
+  padding: 7px;
+  -webkit-mask-image: linear-gradient(to bottom, #000 62%, transparent);
+  mask-image: linear-gradient(to bottom, #000 62%, transparent);
+}
+.psketch__section i {
+  aspect-ratio: 1;
+  border-radius: 1.5px;
+}
+/* One row per color: chip and name. */
+.psketch__palette {
+  right: 12px;
+  width: 74px;
+  display: grid;
+  gap: 3px;
+  padding: 7px;
+  border-radius: 4px;
+}
+.psketch__palette i {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 9.5px;
+}
+.psketch__palette b {
+  width: 9.5px;
+  height: 9.5px;
+  border-radius: 2px;
+}
+.psketch__palette u {
+  flex: 1;
+  max-width: 34px;
+  height: 3px;
+  border-radius: 2px;
+  background: #b9b9b9;
+}
+/* Settings grouped, as in the plugin: a head, then its rows. */
+.plugin__group {
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  margin-top: 14px;
+  padding-top: 4px;
+  box-shadow: inset 0 1.5px 0 var(--mp-fg);
+  font-family: var(--mp-display);
+  font-size: 16px;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+.seg.seg--full {
+  display: flex;
+}
+.seg--full i {
+  flex: 1;
+}
+.seg.seg--full i.is-on {
+  background: var(--mp-fg);
+  color: #fff;
+}
+.plugin__hint {
+  margin: 7px 0 4px;
+  font-size: 11px;
+  color: var(--mp-muted);
+}
+.pstep {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--mp-fg);
+}
+.pstep i {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #f4f4f4;
+  font-style: normal;
+  font-size: 12px;
+}
+/* Create, docked at the bottom of the window, Start over under it. */
+.plugin__dock {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  gap: 10px;
+  padding: 14px 20px 14px;
+  background: #fff;
+  box-shadow: 0 -1px 0 #ececec;
+}
+.plugin__over {
+  justify-self: center;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.seg {
+  display: inline-flex;
+  position: relative;
+  gap: 2px;
+  padding: 2px;
+  border-radius: 999px;
+  background: #f4f4f4;
+}
+.seg i {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 24px;
+  padding: 0 10px;
+  border-radius: 999px;
+  font-style: normal;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--mp-muted);
+  transition: color 200ms ease 60ms;
+}
+.toggle {
+  position: relative;
+  flex: none;
+  width: 34px;
+  height: 20px;
+  border-radius: 999px;
+  background: var(--mp-fg);
+  transition: background-color 200ms ease;
+}
+.toggle::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  transform: translateX(14px);
+  transition: transform 260ms var(--mp-ease-out);
+}
+.toggle.is-off {
+  background: #dcdcdc;
+}
+.toggle.is-off::after {
+  transform: none;
+}
+
+.cursor {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 5;
+  pointer-events: none;
+  transition:
+    transform 820ms var(--travel),
+    opacity 220ms ease;
+}
+.cursor svg {
+  transition: transform 110ms var(--mp-ease-out);
+}
+.cursor.is-down svg {
+  transform: scale(0.86);
+}
+.cursor.is-hidden {
+  opacity: 0;
+}
+
+/* ---------- Sections ---------- */
+
+main > .section {
+  padding: clamp(96px, 13vw, 160px) 0;
+}
+.section--wash {
+  background: var(--wash);
+}
+.head {
+  margin-bottom: clamp(44px, 6vw, 72px);
+}
+.head .label {
+  margin-bottom: 16px;
+}
+.head__sub p,
+.free__sub p {
+  margin: 22px 0 0;
+  max-width: 50ch;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #4a4a4a;
+}
+
+/* How it works: the flow demo, its three steps lighting up underneath. */
+.beats {
+  list-style: none;
+  margin: clamp(28px, 4vw, 44px) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 40px);
+}
+/* The step playing is in full ink; the others step back (still readable: 4.5:1). */
+.step__n,
+.beat__title {
+  transition: opacity 320ms ease;
+}
+.beat__text {
+  transition: color 320ms ease;
+}
+/* Each step is a button: it plays the demo from there. */
+.beat__btn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: 22px 0 4px;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 160ms var(--mp-ease-out);
+}
+.beat__btn:active {
+  transform: scale(0.985);
+}
+.beats.is-live .beat:not(.is-on) :is(.step__n, .beat__title) {
+  opacity: 0.54;
+}
+.beats.is-live .beat.is-on .beat__text {
+  color: #3d3d3d;
+}
+@media (hover: hover) and (pointer: fine) {
+  .beats.is-live .beat:not(.is-on):hover :is(.step__n, .beat__title) {
+    opacity: 0.8;
+  }
+}
+.beat__bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: #e4e4e4;
+  overflow: hidden;
+}
+.beat__bar i {
+  display: block;
+  height: 100%;
+  background: var(--mp-fg);
+  transform-origin: left;
+  animation: beat-fill var(--ms, 3000ms) linear both;
+}
+@keyframes beat-fill {
+  from {
+    transform: scaleX(0);
+  }
+}
+.step__n {
+  font-family: var(--mp-display);
+  font-size: 22px;
+  line-height: 1;
+}
+.beat__title {
+  margin: 10px 0 0;
+  font-size: 19px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+.beat__text {
+  margin: 6px 0 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--mp-muted);
+  text-wrap: pretty;
+}
+
+/* ---------- Features ---------- */
+
+.bento {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 340px;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 0 0 1px #ececec;
+  overflow: hidden;
+}
+.tile--wide {
+  grid-column: span 2;
+}
+.tile__text {
+  padding: 0 26px 26px;
+}
+.tile h3 {
+  margin: 0;
+  font-family: var(--mp-display);
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+.tile p {
+  margin: 8px 0 0;
+  max-width: 44ch;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--mp-muted);
+}
+.demo {
+  position: relative;
+  flex: 1;
+  min-height: 240px;
+  user-select: none;
+}
+
+.demo--sort {
+  container-type: inline-size;
+}
+.sortgrid {
+  position: absolute;
+  left: 26px;
+  top: 76px;
+  --cell: calc((100cqw - 52px - 11 * 4px) / 12);
+}
+.sortgrid__cell {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: var(--cell);
+  height: var(--cell);
+  border-radius: 6px;
+  transform: translate(calc(var(--x) * (var(--cell) + 4px)), calc(var(--y) * (var(--cell) + 4px)));
+  transition: transform 1000ms var(--travel);
+}
+.chip {
+  position: absolute;
+  left: 26px;
+  top: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  height: 36px;
+  padding: 0 8px 0 14px;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 0 0 1px #e6e6e6;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: transform 140ms var(--mp-ease-out);
+}
+.chip.is-pressed {
+  transform: scale(0.96);
+}
+
+.vars {
+  position: absolute;
+  left: 26px;
+  right: 26px;
+  top: 26px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 0 0 1px #e8e8e8;
+  font-size: 12px;
+  overflow: hidden;
+}
+.vars__head {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 12px;
+  background: #fafafa;
+  box-shadow: inset 0 -1px 0 #ececec;
+  font-weight: 600;
+}
+.vars__mode {
+  color: var(--mp-muted);
+  font-weight: 500;
+}
+.vars__row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 30px;
+  padding: 0 12px;
+  opacity: 0;
+  transform: translateX(-8px);
+  transition:
+    opacity 260ms ease,
+    transform 420ms var(--mp-ease-out);
+}
+.vars__row.is-in {
+  opacity: 1;
+  transform: none;
+}
+.vars__dot {
+  flex: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.08);
+}
+.vars__hex {
+  margin-left: auto;
+  color: var(--mp-muted);
+}
+
+.boards {
+  position: absolute;
+  left: 26px;
+  right: 26px;
+  top: 24px;
+  display: grid;
+  gap: 8px;
+}
+.boardcard {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 0 0 1px #e8e8e8;
+  transform: translateX(-10px);
+  transition:
+    transform 520ms var(--mp-ease-out),
+    box-shadow 300ms ease;
+}
+.boardcard.is-in {
+  transform: none;
+  box-shadow: 0 0 0 1.5px var(--mp-fg);
+}
+/* Not in the moodboard yet: its pictures fade back, its words stay readable (4.5:1). */
+.boardcard__pics,
+.boardcard__title {
+  transition:
+    opacity 300ms ease,
+    color 300ms ease;
+}
+.boardcard:not(.is-in) .boardcard__pics {
+  opacity: 0.35;
+}
+.boardcard:not(.is-in) .boardcard__title {
+  color: #767676;
+}
+.boardcard__pics {
+  display: flex;
+  gap: 3px;
+}
+.boardcard__pics .photo {
+  width: 26px;
+  height: 32px;
+  border-radius: 4px;
+}
+.boardcard__text {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+.boardcard__title {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.boardcard__meta {
+  font-size: 11.5px;
+  color: var(--mp-muted);
+}
+.cartline {
+  position: absolute;
+  left: 26px;
+  right: 26px;
+  bottom: 14px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding-top: 10px;
+  box-shadow: inset 0 1px 0 #ececec;
+  font-size: 12px;
+  color: var(--mp-muted);
+}
+.cartline__dupes {
+  font-style: normal;
+  color: var(--mp-fg);
+}
+/* In the wide tile: the boards on the left, the moodboard they make on the right. */
+.tile--wide .demo--boards {
+  display: grid;
+  grid-template-columns: minmax(0, 250px) minmax(0, 1fr);
+  gap: 22px;
+  padding: 24px 26px 56px;
+}
+.tile--wide .boards {
+  position: static;
+}
+.merge {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-content: start;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 14px;
+  background: #f7f7f6;
+  box-shadow: inset 0 0 0 1px #ececec;
+}
+.merge__sec {
+  display: grid;
+  gap: 6px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition:
+    opacity 300ms ease,
+    transform 520ms var(--mp-ease-out);
+}
+.merge__sec.is-in {
+  opacity: 1;
+  transform: none;
+}
+.merge__name {
+  overflow: hidden;
+  font-size: 10.5px;
+  font-weight: 600;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: var(--mp-muted);
+}
+.merge__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px;
+}
+.merge__grid .photo {
+  aspect-ratio: 1;
+  border-radius: 4px;
+  transition:
+    opacity 400ms ease,
+    transform 500ms var(--mp-ease-out);
+}
+.merge__grid .photo.is-gone {
+  opacity: 0.12;
+  transform: scale(0.8);
+}
+.cartline__label {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mp-fg);
+}
+
+.demo--layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 26px;
+}
+.seg--demo {
+  display: grid;
+  grid-template-columns: repeat(3, 70px);
+}
+/* The demos' controls are real buttons: after their opening, they are yours. */
+.seg__opt {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: none;
+  font: inherit;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--mp-muted);
+  cursor: pointer;
+  transition:
+    color 200ms ease 60ms,
+    transform 140ms var(--mp-ease-out);
+}
+.seg__opt.is-on {
+  color: #fff;
+}
+.seg__opt:active {
+  transform: scale(0.95);
+}
+.chip {
+  border: 0;
+  font-family: inherit;
+  color: var(--mp-fg);
+  cursor: pointer;
+}
+.chip:active {
+  transform: scale(0.96);
+}
+@media (hover: hover) and (pointer: fine) {
+  .seg__opt:not(.is-on):hover {
+    color: var(--mp-fg);
+  }
+  .chip:hover {
+    box-shadow:
+      0 0 0 1px #d8d8d8,
+      0 8px 18px -10px rgb(0 0 0 / 0.35);
+  }
+}
+.seg__pill {
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  width: 70px;
+  height: 28px;
+  border-radius: 999px;
+  background: var(--mp-fg);
+  transition: transform 320ms var(--mp-ease-out);
+}
+.layoutbox {
+  position: relative;
+  width: 236px;
+  height: 150px;
+  margin-top: 22px;
+}
+.layoutbox__cell {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 5px;
+  transition:
+    transform 760ms var(--travel),
+    width 760ms var(--travel),
+    height 760ms var(--travel);
+}
+
+.demo--private {
+  flex: none;
+  width: 70px;
+  min-height: 92px;
+}
+.private__bird {
+  left: 4px;
+  top: 2px;
+}
+/* The privacy pledge, written on the page rather than in a tile. */
+/* As far from the bento above as from the section below: centred between them. */
+.pledge {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: clamp(96px, 13vw, 160px);
+}
+.pledge__line {
+  margin: 0;
+  font-family: var(--mp-display);
+  font-size: clamp(32px, 4.6vw, 64px);
+  line-height: 1;
+  text-transform: uppercase;
+}
+.pledge__sub {
+  margin: 12px 0 0;
+  max-width: 52ch;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--mp-muted);
+}
+
+/* ---------- Free, compared ---------- */
+
+.free {
+  text-align: center;
+}
+.title--free {
+  font-size: clamp(64px, 13vw, 190px);
+  line-height: 0.98;
+}
+.free__sub p {
+  margin-left: auto;
+  margin-right: auto;
+}
+.compare {
+  margin-top: clamp(56px, 7vw, 88px);
+}
+.compare__scroll {
+  overflow-x: auto;
+}
+.compare table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 14px;
+}
+.compare th,
+.compare td {
+  height: 54px;
+  padding: 0 18px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+  font-weight: 400;
+}
+.compare thead th {
+  height: 60px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--mp-muted);
+  border-bottom: 1.5px solid var(--mp-fg);
+}
+.compare tbody th {
+  font-weight: 500;
+  white-space: nowrap;
+}
+/* On a narrow screen the table scrolls sideways; the row names stay put. */
+@media (max-width: 760px) {
+  .compare tbody th,
+  .compare thead th:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background: var(--mp-bg);
+    white-space: normal;
+    min-width: 132px;
+    max-width: 132px;
+    box-shadow: 1px 0 0 var(--line);
+  }
+}
+.compare td {
+  color: #555;
+}
+.compare .compare__us {
+  background: var(--mp-fg);
+  color: #fff;
+  font-weight: 600;
+  border-bottom-color: #2a2a2a;
+}
+.compare thead .compare__us {
+  display: table-cell;
+  color: #fff;
+  border-radius: 16px 16px 0 0;
+  border-bottom-color: #2a2a2a;
+}
+.compare thead .compare__us img {
+  display: inline-block;
+  vertical-align: middle;
+  margin: -4px 6px 0 -4px;
+}
+.compare tbody tr:last-child .compare__us {
+  border-radius: 0 0 16px 16px;
+}
+.yes {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--mp-fg);
+  color: #fff;
+}
+.compare__us .yes {
+  background: #fff;
+  color: var(--mp-fg);
+}
+.no {
+  color: var(--mp-faint);
+}
+.compare__note {
+  margin: 18px 0 0;
+  font-size: 12.5px;
+  color: var(--mp-muted);
+}
+
+/* ---------- Closing ---------- */
+
+.closing {
+  padding: 16px;
+}
+.closing__panel {
+  display: flex;
+  flex-direction: column;
+  border-radius: 28px;
+  background: #f1f1f0;
+  overflow: hidden;
+}
+/* Where the twigs fall and pile up. */
+.closing__stage {
+  position: relative;
+  min-height: min(78vh, 760px);
+  display: grid;
+  place-items: center;
+  padding: 96px 0 88px;
+  text-align: center;
+  user-select: none;
+  cursor: default;
+}
+.closing__inner {
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
+.closing__inner a {
+  pointer-events: auto;
+}
+.title--closing {
+  font-size: clamp(44px, 7vw, 112px);
+  max-width: 18ch;
+  margin: 0 auto;
+}
+.closing__duo {
+  justify-content: center;
+  margin-top: 48px;
+}
+.closing__hint {
+  margin: 30px 0 0;
+  font-size: 13px;
+  /* Quiet, but still readable on the grey card (4.5:1). */
+  color: #6b6b6b;
+}
+/* "click" with a mouse, "tap" on a touch screen. */
+.when-touch {
+  display: none;
+}
+@media (hover: none) and (pointer: coarse) {
+  .when-mouse {
+    display: none;
+  }
+  .when-touch {
+    display: inline;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .closing__hint {
+    display: none;
+  }
+}
+
+/* ---------- Footer: inside the last card ---------- */
+
+.footer {
+  padding: 0 clamp(20px, 3vw, 40px);
+}
+.footer__row {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 24px;
+  padding: 18px 0;
+  border-top: 1px solid rgb(0 0 0 / 0.07);
+  font-size: 13px;
+  /* A touch darker than the usual muted grey: it sits on the grey card. */
+  color: #666;
+}
+.footer .nav__brand {
+  font-size: 15px;
+  color: var(--mp-fg);
+}
+.footer__links {
+  display: flex;
+  gap: 22px;
+  margin-left: auto;
+  color: var(--mp-fg);
+}
+@media (max-width: 560px) {
+  .footer__links {
+    margin-left: 0;
+  }
+}
+/* The footer line's magpie: it stands on the line (the row's top border). */
+.linebird {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 0;
+  pointer-events: none;
+}
+.linebird .linebird__bird {
+  top: 0;
+  left: 0;
+}
+.linebird__bang {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  translate: -50% 0;
+  font-family: var(--mp-display);
+  font-size: 24px;
+  line-height: 1;
+  color: var(--mp-fg);
+  animation: bang 1100ms var(--mp-ease-out) both;
+}
+@keyframes bang {
+  0% {
+    opacity: 0;
+    transform: translateY(6px) scale(0.6);
+  }
+  18% {
+    opacity: 1;
+    transform: translateY(-2px) scale(1.15);
+  }
+  30%,
+  80% {
+    opacity: 1;
+    transform: none;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 900px) {
+  .nav__links {
+    display: none;
+  }
+  .nav .cta {
+    margin-left: auto;
+  }
+  .beats {
+    grid-template-columns: 1fr;
+  }
+  .bento {
+    grid-template-columns: 1fr;
+  }
+  .tile--wide {
+    grid-column: auto;
+  }
+  .tile--wide .demo--boards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .flow {
+    height: 560px;
+  }
+}
+@media (max-width: 560px) {
+  .cta {
+    height: 48px;
+  }
+  .pledge {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .closing__duo {
+    width: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .peek {
+    display: none;
+  }
+  .ticker__track {
+    animation: none;
+  }
+  .hero__mark {
+    transition: none;
+  }
+  .toolbar-hint__line,
+  .toolbar-hint__head {
+    stroke-dashoffset: 0;
+    transition: none;
+  }
+  .hero__in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .reveal,
+  .title__in,
+  .flow__strip,
+  .cursor,
+  .fsection__cell,
+  .sortgrid__cell,
+  .layoutbox__cell {
+    transition: none;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+  .title__in {
+    transform: none;
+  }
+  .panel__hop {
+    animation: none;
+  }
+}
+
+/* Below the fold: the browser skips laying out and painting these sections
+   until they come near the screen (a much lighter first render). */
+main > section:not(.hero) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 1000px;
+}
+/* Their real heights (roughly): a link to a section lands right even before
+   the sections above it have been drawn. */
+main > section.section--how {
+  contain-intrinsic-size: auto 1320px;
+}
+main > section.section--wash {
+  contain-intrinsic-size: auto 2240px;
+}
+main > section.section--compare {
+  contain-intrinsic-size: auto 1060px;
+}
+main > section.closing {
+  contain-intrinsic-size: auto 820px;
+}
+@media (min-width: 901px) {
+  main > section.section--wash {
+    contain-intrinsic-size: auto 1510px;
+  }
+  main > section.section--compare {
+    contain-intrinsic-size: auto 1320px;
+  }
+}
+/* About to jump to a section: everything drawn, so it lands exactly. */
+.is-drawn main > section {
+  content-visibility: visible;
+}

@@ -1,0 +1,931 @@
+html,
+body,
+#app {
+  height: 100%;
+}
+body {
+  overflow: hidden;
+  user-select: none;
+}
+
+.app {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+  padding: 0 var(--mp-gutter);
+  flex: none;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+/* The sticker has its own margin: pull it in so it lines up with the gutter. */
+.app-icon {
+  display: block;
+  flex: none;
+  margin-left: -4px;
+  user-select: none;
+}
+.brand__name {
+  font-family: var(--mp-display);
+  font-size: 18px;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+/* Hidden field that receives ⌘V when the plugin window has focus. */
+.paste-target {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  opacity: 0;
+  pointer-events: none;
+  resize: none;
+}
+
+/* ---------- Paste screen ---------- */
+
+/* One hero, centred: the keys with the magpie on them, then the words. */
+.paste {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 8px;
+}
+.paste__title {
+  margin-top: 36px;
+  font-size: 40px;
+  white-space: nowrap;
+}
+.paste__sub {
+  margin: 12px 0 0;
+  max-width: 28ch;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--mp-muted);
+  text-wrap: balance;
+}
+.paste__notice {
+  max-width: 30ch;
+  text-align: left;
+}
+/* The words rise in after the keys. */
+.paste__in {
+  animation: paste-in 620ms var(--mp-ease-out) backwards;
+  animation-delay: calc(var(--i) * 80ms + 60ms);
+}
+@keyframes paste-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stepper__roll,
+  .segmented.is-ready .segmented__pill,
+  .switch__thumb,
+  .palette__swatch {
+    animation: none;
+    transition: none;
+  }
+  .paste__in {
+    animation: none;
+  }
+}
+
+/* ---------- Screens ---------- */
+
+.screen {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  /* The count folding away must not move the scroll (it would unfold again). */
+  overflow-anchor: none;
+  /* Under the preview's pinned block (its height, set from App.tsx). */
+  scroll-padding-top: var(--pinned, 0px);
+  padding: 16px var(--mp-gutter) 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.small {
+  margin-top: 12px;
+  font-size: 12px;
+}
+
+.of {
+  /* Lighter than the count, still 3:1 on white (large text). */
+  color: #8a8a8a;
+}
+
+.notice {
+  margin: 20px 0 0;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: var(--mp-wash);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+/* ---------- Preview ---------- */
+
+.boards {
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 0;
+  border-top: 1px solid var(--mp-line);
+}
+.boards li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--mp-line);
+  font-size: 13px;
+}
+.boards li .mp-source-icon {
+  align-self: center;
+}
+.boards__title {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 500;
+}
+.boards__count {
+  color: var(--mp-muted);
+}
+/* Leave a board out, or put it back. */
+.boards__toggle {
+  flex: none;
+  display: grid;
+  place-items: center;
+  align-self: center;
+  width: 24px;
+  height: 24px;
+  margin: -4px -6px -4px -2px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  color: var(--mp-muted);
+  cursor: pointer;
+  transition:
+    background-color 150ms ease,
+    color 150ms ease,
+    transform 160ms var(--mp-ease-out);
+}
+.boards__toggle svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+}
+.boards__toggle:hover:not(:disabled) {
+  background: var(--mp-wash);
+  color: var(--mp-fg);
+}
+.boards__toggle:active:not(:disabled) {
+  transform: scale(0.9);
+}
+.boards__toggle:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+.boards li > :not(.boards__toggle) {
+  transition: opacity 150ms ease;
+}
+.boards li.is-off > :not(.boards__toggle) {
+  opacity: 0.35;
+}
+.boards li.is-off .boards__title {
+  text-decoration: line-through;
+}
+
+/*
+ * Fixed at the top of the preview: the sketch, the count and the boards. Once
+ * scrolled, the count folds away (it moves up into the top bar) and only the
+ * settings scroll, under it.
+ */
+.preview-top {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  flex: none;
+  background: #fff;
+}
+/* White above it, so nothing scrolling under shows between it and the top bar. */
+.preview-top::before {
+  content: '';
+  position: absolute;
+  left: -2px;
+  right: -2px;
+  bottom: 100%;
+  height: 24px;
+  background: #fff;
+}
+/* The settings fade out as they slide under it. */
+.preview-top::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 14px;
+  background: linear-gradient(#fff, rgb(255 255 255 / 0));
+  pointer-events: none;
+}
+.preview-top .boards {
+  margin-top: 0;
+}
+.preview__notice {
+  margin-top: 16px;
+}
+/* Many boards: the list keeps to a few rows and scrolls on its own. */
+.preview-top.is-compact .boards {
+  max-height: 124px;
+  overflow-y: auto;
+}
+.tally {
+  display: grid;
+  grid-template-rows: 1fr;
+  transition:
+    grid-template-rows 240ms var(--mp-ease-out),
+    opacity 200ms ease;
+}
+/* Spaced with margins, not padding: margins fold away with the row, padding would not. */
+.tally__in {
+  min-height: 0;
+  overflow: hidden;
+  transform-origin: 0 0;
+  transition:
+    transform 240ms var(--mp-ease-out),
+    filter 200ms ease;
+}
+.tally__in > :first-child {
+  margin-top: 10px;
+}
+.tally .mp-label {
+  margin: 10px 0 24px;
+}
+.is-compact .tally {
+  grid-template-rows: 0fr;
+  opacity: 0;
+}
+.is-compact .tally__in {
+  transform: translateY(-10px) scale(0.92);
+  filter: blur(2px);
+}
+
+/* The count, in the top bar once the preview is scrolled. */
+.topbar__end {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.topbar__count {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 5px;
+  opacity: 0;
+  transform: translateY(8px);
+  filter: blur(2px);
+  transition:
+    opacity 160ms ease,
+    transform 160ms var(--mp-ease-out),
+    filter 160ms ease;
+}
+.topbar__count.is-shown {
+  opacity: 1;
+  transform: none;
+  filter: none;
+  transition-duration: 260ms;
+  transition-delay: 60ms;
+}
+.topbar__num {
+  font-family: var(--mp-display);
+  font-size: 18px;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+.topbar__unit {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mp-muted);
+}
+
+/*
+ * The sketch: the moodboard to come as it will sit on the Figma canvas, a
+ * section of grey blocks and the Palette frame beside it. Blocks glide to
+ * their new place when a setting changes; the setting being touched lights up
+ * its part.
+ */
+.sketch-box {
+  margin: 0 0 16px;
+  padding: 10px 12px 0;
+  border-radius: 12px;
+  background: #f4f4f3;
+  box-shadow: inset 0 0 0 1px var(--mp-line);
+}
+.sketch {
+  position: relative;
+  overflow: clip;
+}
+.sketch__label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  font-size: 9.5px;
+  font-weight: 600;
+  line-height: 12px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #8a8a8a;
+  transition:
+    width 260ms var(--mp-ease-out),
+    left 260ms var(--mp-ease-out),
+    opacity 200ms ease;
+}
+.sketch__section,
+.sketch__palette {
+  position: absolute;
+  top: 16px;
+  left: 0;
+  border-radius: 4px 4px 0 0;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgb(0 0 0 / 0.06);
+  transition:
+    width 260ms var(--mp-ease-out),
+    left 260ms var(--mp-ease-out),
+    opacity 200ms ease,
+    box-shadow 200ms ease;
+}
+/* The section runs on past the view: it fades out at the bottom. */
+.sketch__section {
+  -webkit-mask-image: linear-gradient(to bottom, #000 62%, transparent);
+  mask-image: linear-gradient(to bottom, #000 62%, transparent);
+}
+/* The palette frame hugs its rows: it grows a row at a time. */
+.sketch__palette {
+  border-radius: 4px;
+  transition:
+    width 260ms var(--mp-ease-out),
+    left 260ms var(--mp-ease-out),
+    height 260ms var(--mp-ease-out),
+    opacity 200ms ease,
+    box-shadow 200ms ease;
+}
+.sketch__palette.is-off {
+  opacity: 0;
+}
+.sketch__tile,
+.sketch__swatch,
+.sketch__grid > span,
+.sketch__row {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition:
+    transform 260ms var(--mp-ease-out),
+    width 260ms var(--mp-ease-out),
+    height 260ms var(--mp-ease-out),
+    background-color 320ms ease,
+    opacity 200ms ease;
+}
+.sketch__tile {
+  border-radius: 1.5px;
+}
+.sketch__swatch {
+  border-radius: 50%;
+}
+/* Columns, lit: the layout grid's bands, as Figma draws them. */
+.sketch__grid > span {
+  z-index: 1;
+  background: rgb(0 0 0 / 0.07);
+  opacity: 0;
+}
+.is-focus-columns .sketch__grid > span {
+  opacity: 1;
+}
+/* Spacing, lit: the gutters hatched (they are the section showing between blocks). */
+.is-focus-spacing .sketch__section {
+  background: repeating-linear-gradient(-45deg, rgb(0 0 0 / 0.16) 0 1px, #fff 1px 4px);
+}
+/* Palette, lit: its frame outlined. */
+.is-focus-palette .sketch__palette {
+  box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.32);
+}
+.sketch__row {
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 7px;
+}
+/* A row added with one more colour slides in (not the ones there at first). */
+.sketch__row.is-new {
+  animation: row-in 260ms var(--mp-ease-out) backwards;
+}
+.sketch__chip {
+  flex: none;
+  border-radius: 2px;
+  transition:
+    width 260ms var(--mp-ease-out),
+    height 260ms var(--mp-ease-out);
+}
+.sketch__name {
+  flex: 1;
+  height: 3px;
+  max-width: 34px;
+  border-radius: 2px;
+  background: #e2e2e2;
+}
+/* Saved as variables: each colour gets a name, darker. */
+.has-variables .sketch__name {
+  background: #b9b9b9;
+}
+@keyframes row-in {
+  from {
+    opacity: 0;
+    translate: -6px 0;
+  }
+}
+/* What the chosen layout gives. */
+.settings__hint {
+  margin: 8px 0 8px;
+  min-height: 18px;
+  font-size: 12px;
+  color: var(--mp-muted);
+}
+.settings__hint-text {
+  display: inline-block;
+}
+/* Only when the layout changes, not when the preview opens. */
+.settings__hint-text.is-new {
+  animation: hint-in 200ms var(--mp-ease-out);
+}
+@keyframes hint-in {
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sketch__tile,
+  .sketch__swatch,
+  .sketch__chip,
+  .sketch__grid > span,
+  .sketch__row,
+  .sketch__label,
+  .sketch__section,
+  .sketch__palette {
+    transition: none;
+    animation: none;
+  }
+  .settings__hint-text {
+    animation: none;
+  }
+  .tally,
+  .tally__in,
+  .topbar__count {
+    transition: none;
+  }
+}
+
+.settings {
+  margin-top: 24px;
+}
+/* Two groups, each with a head: Layout, then Palette (its switch in the head). */
+.settings__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 44px;
+  margin: 0;
+  padding-top: 6px;
+  border-top: 1.5px solid var(--mp-fg);
+  font-family: var(--mp-display);
+  font-size: 18px;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+.settings__head--switch {
+  margin-top: 22px;
+  border-bottom: 1px solid var(--mp-line);
+}
+.settings__layout {
+  padding: 4px 0 2px;
+  border-bottom: 1px solid var(--mp-line);
+}
+.settings__layout .segmented {
+  display: flex;
+  width: 100%;
+}
+.settings__layout .segmented__option {
+  flex: 1;
+}
+.settings__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 48px;
+  border-bottom: 1px solid var(--mp-line);
+}
+
+.stepper {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.stepper__value {
+  min-width: 44px;
+  overflow: hidden;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+}
+.stepper__roll {
+  display: inline-block;
+}
+.stepper__roll.is-up {
+  animation: roll-up 200ms var(--mp-ease-out);
+}
+.stepper__roll.is-down {
+  animation: roll-down 200ms var(--mp-ease-out);
+}
+@keyframes roll-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+@keyframes roll-down {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+.stepper__btn {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--mp-wash);
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    transform 160ms var(--mp-ease-out),
+    background-color 150ms ease;
+}
+.stepper__btn:active:not([aria-disabled='true']) {
+  transform: scale(0.92);
+}
+/* At a limit: shown off, but still focusable (aria-disabled, not disabled). */
+.stepper__btn[aria-disabled='true'] {
+  color: var(--mp-faint);
+  cursor: default;
+}
+@media (hover: hover) and (pointer: fine) {
+  .stepper__btn:hover:not([aria-disabled='true']) {
+    background: var(--mp-line);
+  }
+}
+
+.settings__note {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--mp-line);
+}
+.small-inline {
+  font-size: 12px;
+  line-height: 1.4;
+}
+.small-inline strong {
+  color: var(--mp-fg);
+  font-weight: 600;
+}
+
+/* Switch: black when on. */
+.switch {
+  position: relative;
+  width: 40px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: var(--mp-line);
+  cursor: pointer;
+  transition: background-color 160ms ease;
+}
+.switch[aria-checked='true'] {
+  background: var(--mp-fg);
+}
+.switch__thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: var(--mp-bg);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.18);
+  transition:
+    transform 220ms var(--mp-ease-out),
+    width 160ms var(--mp-ease-out);
+}
+.switch[aria-checked='true'] .switch__thumb {
+  transform: translateX(16px);
+}
+/* Pressed, the thumb stretches towards where it's going, like a finger on it. */
+.switch:active .switch__thumb {
+  width: 23px;
+}
+.switch[aria-checked='true']:active .switch__thumb {
+  transform: translateX(11px);
+}
+@media (hover: hover) and (pointer: fine) {
+  .switch[aria-checked='false']:hover {
+    background: #dcdcdc;
+  }
+  .switch[aria-checked='true']:hover {
+    background: #262626;
+  }
+}
+
+/* Segmented control: the black pill slides under the chosen option. */
+.segmented {
+  position: relative;
+  display: inline-flex;
+  gap: 2px;
+  padding: 2px;
+  border-radius: 999px;
+  background: var(--mp-wash);
+}
+.segmented__pill {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 26px;
+  border-radius: 999px;
+  background: var(--mp-fg);
+}
+.segmented.is-ready .segmented__pill {
+  transition:
+    transform 280ms var(--mp-ease-out),
+    width 280ms var(--mp-ease-out);
+}
+.segmented__option {
+  position: relative;
+  height: 26px;
+  padding: 0 11px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--mp-muted);
+  cursor: pointer;
+  transition:
+    background-color 150ms ease,
+    color 150ms ease,
+    transform 160ms var(--mp-ease-out);
+}
+.segmented__option:active {
+  transform: scale(0.96);
+}
+.segmented__option.is-active {
+  color: var(--mp-bg);
+  /* Turns white as the pill arrives under it, not before. */
+  transition-delay: 60ms;
+}
+@media (hover: hover) and (pointer: fine) {
+  .segmented__option:not(.is-active):hover {
+    color: var(--mp-fg);
+  }
+}
+
+/* ---------- Building and done: a centred stage ---------- */
+
+/* Like the paste screen: one hero (the nest), the words under it. */
+.stage {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.stage .nest {
+  width: 100%;
+  margin-top: 0;
+}
+.stage__count {
+  margin: 8px 0 0;
+  font-size: 44px;
+}
+.stage__label {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: var(--mp-muted);
+}
+/* Three steps, the current one drawn longer. */
+.stage__steps {
+  display: flex;
+  gap: 5px;
+  margin-top: 14px;
+}
+.stage__steps i {
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--mp-line);
+  transition:
+    width 320ms var(--mp-ease-out),
+    background-color 200ms ease;
+}
+.stage__steps i.is-done {
+  background: var(--mp-fg);
+}
+.stage__steps i.is-current {
+  width: 18px;
+  background: var(--mp-fg);
+}
+.stage__note {
+  margin: 14px 0 0;
+  font-size: 12px;
+  color: var(--mp-muted);
+}
+.stage--done {
+  flex: none;
+  padding-top: 4px;
+}
+.stage__title {
+  margin-top: 6px;
+  font-size: 44px;
+}
+.stage__sub {
+  margin: 8px 0 0;
+  max-width: 30ch;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--mp-muted);
+  text-wrap: balance;
+}
+.stage__sub strong {
+  color: var(--mp-fg);
+  font-weight: 600;
+}
+@media (prefers-reduced-motion: reduce) {
+  .stage__steps i {
+    transition: none;
+  }
+}
+
+/* ---------- Done ---------- */
+
+.facts {
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 0;
+  border-top: 1px solid var(--mp-line);
+}
+.facts li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--mp-line);
+  font-size: 13px;
+  color: var(--mp-muted);
+}
+.facts li strong {
+  color: var(--mp-fg);
+  font-weight: 600;
+}
+.palette-block + .palette-block {
+  margin-top: 8px;
+}
+.palette-block__title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 20px;
+}
+.palette-block__title + .palette {
+  margin-top: 10px;
+}
+.palette {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px 8px;
+  margin-top: 24px;
+}
+.palette__chip {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.palette__swatch {
+  display: block;
+  aspect-ratio: 1;
+  border-radius: 8px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
+  transition: transform 180ms var(--mp-ease-out);
+}
+@media (hover: hover) and (pointer: fine) {
+  .palette__swatch:hover {
+    transform: translateY(-2px);
+  }
+}
+.palette__hex {
+  font-size: 11px;
+  color: var(--mp-muted);
+}
+
+/* ---------- Dock ---------- */
+
+.dock {
+  flex: none;
+  display: grid;
+  gap: 8px;
+  padding: 14px var(--mp-gutter) 16px;
+  border-top: 1px solid var(--mp-line);
+  background: var(--mp-bg);
+}
+.dock__caption {
+  margin: 0;
+  font-size: 12px;
+  text-align: center;
+  color: var(--mp-muted);
+}
+.dock__secondary {
+  justify-self: center;
+  margin-top: 4px;
+}
+
+/* ---------- Drop overlay ---------- */
+
+.dropzone {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  display: grid;
+  place-items: center;
+  padding: var(--mp-gutter);
+  background: var(--mp-fg);
+  color: var(--mp-bg);
+  text-align: center;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 150ms var(--mp-ease-out);
+}
+@starting-style {
+  .dropzone {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stepper__btn,
+  .boards__toggle,
+  .segmented__option,
+  .dropzone {
+    transition-duration: 0ms;
+  }
+  /* No press scales either (same selectors as above, so these win). */
+  .stepper__btn:active:not([aria-disabled='true']),
+  .boards__toggle:active:not(:disabled),
+  .segmented__option:active {
+    transform: none;
+  }
+}

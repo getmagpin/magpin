@@ -1,0 +1,1008 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* Room for the fixed dock, measured (it grows with the moodboard bar). */
+  padding-bottom: var(--dock-h, 0px);
+}
+
+/* Read out by screen readers, not shown. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- Top bar ---------- */
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0 var(--mp-gutter);
+  flex: none;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+/* The sticker has its own margin: pull it in so it lines up with the gutter. */
+.app-icon {
+  display: block;
+  flex: none;
+  margin-left: -4px;
+  user-select: none;
+}
+.brand__name {
+  font-family: var(--mp-display);
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  padding: 12px var(--mp-gutter) 20px;
+}
+.hero__title {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.hero__meta {
+  margin-top: 12px;
+}
+.hero__sub {
+  margin-top: 16px;
+  max-width: 32ch;
+}
+.hero__actions {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.hero--empty {
+  padding-top: 32px;
+}
+.hero--intro {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  padding-bottom: 28px;
+}
+
+.steps {
+  list-style: none;
+  margin: 32px 0 0;
+  padding: 0;
+  border-top: 1px solid var(--mp-line);
+}
+.steps li {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--mp-line);
+  font-size: 14px;
+}
+.steps__n {
+  font-family: var(--mp-display);
+  font-size: 18px;
+  line-height: 1;
+  min-width: 24px;
+}
+
+/* ---------- Intro (no board open) ---------- */
+
+/* Click anywhere: twigs fall and pile up at the bottom, behind the sources. */
+.intro {
+  position: relative;
+  user-select: none;
+}
+.intro .mp-twig-rain {
+  z-index: 1;
+}
+/* At the bottom of the screen, above the twigs. */
+.intro__sources {
+  position: relative;
+  z-index: 2;
+  margin-top: auto;
+  padding-top: 32px;
+}
+
+/* The title swipes up word by word, each out of its own line. */
+.intro__word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding: 0.06em 0;
+  margin: -0.06em 0;
+}
+.intro__word-in {
+  display: inline-block;
+  animation: intro-word 760ms var(--mp-ease-out) backwards;
+  animation-delay: calc(var(--i) * 80ms);
+}
+@keyframes intro-word {
+  from {
+    transform: translateY(110%);
+  }
+}
+.intro__last {
+  white-space: nowrap;
+}
+/* Everything else rises in, one after the other. */
+.intro__in {
+  animation: intro-in 560ms var(--mp-ease-out) backwards;
+  animation-delay: calc(var(--i) * 70ms + 160ms);
+}
+@keyframes intro-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+/* The rules between the steps draw themselves from the left: real borders
+   (always crisp, all the same hairline), uncovered by a strip of page that
+   slides away and stays gone. */
+.intro__steps {
+  position: relative;
+}
+.intro__step {
+  position: relative;
+}
+.intro__steps::before,
+.intro__step::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--mp-bg);
+  transform: scaleX(0);
+  transform-origin: right;
+  animation: intro-uncover 900ms var(--mp-ease-out) backwards;
+  pointer-events: none;
+}
+.intro__steps::before {
+  top: -2px;
+  animation-delay: 440ms;
+}
+.intro__step::after {
+  bottom: -2px;
+  animation-delay: calc(var(--i) * 70ms + 240ms);
+}
+@keyframes intro-uncover {
+  from {
+    transform: scaleX(1);
+  }
+}
+.intro__chips {
+  display: grid;
+  /* Four equal tiles: they hold on one line down to the narrowest panel. */
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+  margin-top: 12px;
+}
+.intro__chip {
+  display: flex;
+  text-decoration: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-width: 0;
+  height: 60px;
+  padding: 0 4px;
+  border: 1px solid var(--mp-line);
+  border-radius: 14px;
+  background: var(--mp-bg);
+  color: var(--mp-fg);
+  font: inherit;
+  font-size: 11.5px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    transform 160ms var(--mp-ease-out);
+}
+.intro__chip:hover {
+  background: var(--mp-wash);
+  border-color: var(--mp-wash);
+}
+.intro__chip .mp-source-icon {
+  transition: transform 200ms var(--mp-ease-out);
+}
+@media (hover: hover) and (pointer: fine) {
+  .intro__chip:hover .mp-source-icon {
+    transform: translateY(-2px);
+  }
+}
+.intro__chip:active {
+  transform: scale(0.97);
+}
+/* Back on this screen later in the same panel: no opening again, the bird is simply there. */
+.intro.is-still .intro__word-in,
+.intro.is-still .intro__in,
+.intro.is-still .intro__steps::before,
+.intro.is-still .intro__step::after {
+  animation: none;
+}
+.intro.is-still .mp-perch__land {
+  animation: intro-appear 150ms var(--mp-ease-out) backwards;
+}
+@keyframes intro-appear {
+  from {
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .intro__word-in,
+  .intro__in,
+  .intro__steps::before,
+  .intro__step::after,
+  .intro.is-still .mp-perch__land {
+    animation: none;
+  }
+}
+
+/* ---------- Collect progress ---------- */
+
+/* A new board, not read yet: the magpie waits at the start of the line. */
+.found {
+  display: grid;
+  gap: 14px;
+  padding: 4px var(--mp-gutter) 20px;
+}
+.found__line {
+  position: relative;
+  padding-top: 32px;
+}
+.found__line .found__bird {
+  top: 2px;
+  left: 0;
+}
+.found__hint {
+  margin: 0;
+  font-size: 13px;
+}
+
+/* Folds away (height to nothing) once the reading has played its ending. */
+.collect {
+  display: grid;
+  grid-template-rows: 1fr;
+  transition:
+    grid-template-rows 320ms var(--mp-ease-out),
+    opacity 220ms ease;
+}
+.collect.is-leaving {
+  grid-template-rows: 0fr;
+  opacity: 0;
+}
+.collect__inner {
+  min-height: 0;
+  padding: 0 var(--mp-gutter) 16px;
+}
+.collect.is-leaving .collect__inner {
+  overflow: hidden;
+}
+/* The bar moves at the bird's pace, then finishes its run from where it is. */
+.collect .mp-progress__fill {
+  transition: transform 600ms var(--mp-ease-out);
+}
+.collect.is-done .mp-progress__fill {
+  transition: transform 900ms var(--mp-ease-out);
+}
+.collect__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+/* ---------- Selection toolbar ---------- */
+
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 44px;
+  padding: 0 var(--mp-gutter);
+  background: var(--mp-bg);
+  border-top: 1px solid var(--mp-line);
+  border-bottom: 1px solid var(--mp-line);
+}
+.toolbar__count {
+  font-size: 13px;
+  color: var(--mp-muted);
+}
+.toolbar__count strong {
+  color: var(--mp-fg);
+  font-weight: 600;
+}
+.toolbar__actions {
+  display: flex;
+  gap: 16px;
+}
+
+/* ---------- Thumbnails ---------- */
+
+.grid {
+  list-style: none;
+  margin: 0;
+  padding: 12px var(--mp-gutter) 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));
+  gap: 4px;
+}
+
+.thumb {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--mp-wash);
+  cursor: pointer;
+  transition:
+    transform 160ms var(--mp-ease-out),
+    opacity 200ms var(--mp-ease-out);
+  -webkit-tap-highlight-color: transparent;
+}
+@starting-style {
+  .thumb {
+    opacity: 0;
+  }
+}
+.thumb:active {
+  transform: scale(0.97);
+}
+.thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition:
+    opacity 150ms ease,
+    filter 150ms ease,
+    transform 200ms var(--mp-ease-out);
+}
+.thumb[aria-pressed='false'] img {
+  opacity: 0.28;
+  filter: grayscale(1);
+}
+
+.thumb__check {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--mp-fg);
+  color: var(--mp-bg);
+  transition:
+    background-color 150ms ease,
+    color 150ms ease,
+    box-shadow 150ms ease;
+}
+.thumb[aria-pressed='false'] .thumb__check {
+  background: rgba(255, 255, 255, 0.92);
+  color: transparent;
+  box-shadow: inset 0 0 0 1.5px var(--mp-fg);
+}
+/* Picked again: the tick pops back in. */
+.thumb[aria-pressed='true'] .thumb__check svg {
+  animation: check-pop 260ms var(--mp-ease-out) backwards;
+}
+@keyframes check-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+}
+@media (hover: hover) and (pointer: fine) {
+  .thumb:hover img {
+    transform: scale(1.04);
+  }
+  .thumb::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: inset 0 0 0 2px var(--mp-fg);
+    opacity: 0;
+    transition: opacity 120ms ease;
+  }
+  .thumb:hover::after {
+    opacity: 1;
+  }
+}
+
+/* ---------- Dock ---------- */
+
+.dock {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  display: grid;
+  gap: 8px;
+  padding: 14px var(--mp-gutter) 16px;
+  background: var(--mp-bg);
+  border-top: 1px solid var(--mp-line);
+}
+.dock__zip {
+  padding: 8px 0 2px;
+}
+
+/* ---------- Peeking magpie (feedback) ---------- */
+
+/* Sits on the dock's top edge; the bird rises from behind it. */
+.peek {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  padding: 26px var(--mp-gutter) 0;
+  background: linear-gradient(to bottom, rgb(255 255 255 / 0), var(--mp-bg) 24px);
+  /* The strip lets clicks through to the thumbnails, except where it shows something. */
+  pointer-events: none;
+}
+/* Hovering the bird, the words or the action keeps the notice up. */
+.peek__bird,
+.peek__action,
+.peek:not(.deliver) .peek__text {
+  pointer-events: auto;
+}
+.peek__bird {
+  position: relative;
+  flex: none;
+  width: 58px;
+  height: 54px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  /* Hidden below the dock's edge only. */
+  clip-path: inset(-60px -60px 0 -60px);
+}
+.peek__rise {
+  position: absolute;
+  left: -18px;
+  top: 4px;
+  width: 74px;
+  height: 104px;
+  animation: peek-up 460ms var(--mp-ease-out) both;
+}
+.peek:not(.deliver) .mp-magpie {
+  transform-origin: 56% 30%;
+  transition: transform 280ms var(--mp-ease-out);
+}
+/* A tilt of the head with the wink. */
+.peek__rise.is-winking .mp-magpie {
+  transform: rotate(-8deg);
+}
+.peek__text {
+  min-width: 0;
+  padding-bottom: 11px;
+  animation: peek-text-in 320ms var(--mp-ease-out) 120ms both;
+}
+.peek__title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.peek__detail {
+  margin: 2px 0 0;
+  font-size: 12px;
+  line-height: 1.35;
+  color: var(--mp-muted);
+}
+.peek__action {
+  margin-top: 3px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--mp-fg);
+  font: inherit;
+  font-size: 12px;
+  letter-spacing: 0;
+  text-transform: none;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: var(--mp-faint);
+  cursor: pointer;
+}
+.peek__action:hover {
+  text-decoration-color: currentColor;
+}
+.peek.is-leaving .peek__rise {
+  animation: peek-down 220ms var(--mp-ease-out) forwards;
+}
+.peek.is-leaving .peek__text {
+  opacity: 0;
+  transition: opacity 160ms var(--mp-ease-out);
+}
+/* Delivery: the stage spans the whole strip; the bird walks on the dock's
+   edge and what falls past it disappears behind the dock. */
+.deliver {
+  height: 76px;
+}
+.deliver__stage {
+  position: absolute;
+  inset: 0;
+  clip-path: inset(-60px -60px 0 -60px);
+  pointer-events: none;
+}
+.deliver__stage .mp-magpie {
+  will-change: transform;
+}
+.deliver__twig {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--mp-fg);
+  transform-origin: 52% 100%;
+}
+.deliver__twig svg {
+  display: block;
+  overflow: visible;
+  transform-origin: 85% 15%;
+  animation: deliver-fall 560ms cubic-bezier(0.5, 0, 0.9, 0.5) forwards;
+}
+@keyframes deliver-fall {
+  to {
+    transform: translateY(64px) rotate(-30deg);
+  }
+}
+.cartbar__count.is-bumped {
+  animation: cart-bump 520ms var(--mp-ease-out);
+}
+@keyframes cart-bump {
+  0% {
+    color: var(--mp-muted);
+  }
+  30% {
+    color: var(--mp-fg);
+    transform: translateY(-2px);
+  }
+  100% {
+    color: var(--mp-muted);
+    transform: none;
+  }
+}
+@keyframes peek-up {
+  from {
+    transform: translateY(56px);
+  }
+  70% {
+    transform: translateY(-3px);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes peek-down {
+  to {
+    transform: translateY(58px);
+  }
+}
+@keyframes peek-text-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .peek__rise,
+  .peek__text,
+  .peek.is-leaving .peek__rise {
+    animation: none;
+  }
+}
+
+/* ---------- Add to moodboard ---------- */
+
+/* Add to moodboard, in the dock above Copy for Figma. */
+.dock__add {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  width: 100%;
+  height: 40px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--mp-wash);
+  color: var(--mp-fg);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    background-color 150ms ease,
+    color 150ms ease,
+    transform 160ms var(--mp-ease-out);
+}
+@media (hover: hover) and (pointer: fine) {
+  .dock__add:hover {
+    background: var(--mp-line);
+  }
+}
+.dock__add:active {
+  transform: scale(0.97);
+}
+.dock__add.is-added {
+  background: var(--mp-bg);
+  box-shadow: inset 0 0 0 1px var(--mp-line);
+}
+.hero__rescan {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--mp-fg);
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  cursor: pointer;
+}
+.hero__rescan:hover:not(:disabled) {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.hero__rescan:disabled {
+  color: var(--mp-faint);
+  cursor: default;
+}
+
+/* ---------- Cart ---------- */
+
+.cartbar {
+  margin: -2px 0 4px;
+  border-bottom: 1px solid var(--mp-line);
+}
+.cartbar__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+}
+.cartbar__title {
+  color: var(--mp-fg);
+}
+.cartbar__count {
+  flex: 1;
+  min-width: 0;
+  font-size: 12px;
+  color: var(--mp-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 150ms ease;
+}
+.cartbar__chevron {
+  flex: none;
+  transition: transform 200ms var(--mp-ease-out);
+}
+@media (hover: hover) and (pointer: fine) {
+  .cartbar__head:hover .cartbar__count {
+    color: var(--mp-fg);
+  }
+  .cartbar__head:hover .cartbar__chevron {
+    transform: translateY(1px);
+  }
+  .cartbar.is-open .cartbar__head:hover .cartbar__chevron {
+    transform: rotate(180deg) translateY(1px);
+  }
+}
+.cartbar.is-open .cartbar__chevron {
+  transform: rotate(180deg);
+}
+.cartbar__body {
+  max-height: 40vh;
+  overflow-y: auto;
+  padding-bottom: 10px;
+}
+.cartbar__clear {
+  margin-top: 10px;
+}
+.cartlist {
+  list-style: none;
+  margin: 0;
+  padding: 0 var(--mp-gutter);
+  border-top: 1px solid var(--mp-line);
+}
+.cartlist--compact {
+  padding: 0;
+  border-top: 0;
+}
+.cartlist__row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid var(--mp-line);
+}
+.cartlist__coverbtn {
+  flex: none;
+  display: block;
+  margin: 10px 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+.cartlist__cover {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  object-fit: cover;
+  background: var(--mp-wash);
+}
+.cartlist__text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+/* Editable in place: reads as text, shows it is editable on hover and focus. */
+.cartlist__title {
+  width: 100%;
+  margin: 0 0 0 -5px;
+  padding: 2px 5px;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  font: 600 13px/1.35 var(--mp-font);
+  color: var(--mp-fg);
+  text-overflow: ellipsis;
+  cursor: text;
+  transition:
+    background-color 120ms ease,
+    box-shadow 120ms ease;
+}
+.cartlist__title:focus {
+  outline: none;
+  background: var(--mp-bg);
+  box-shadow: inset 0 0 0 1.5px var(--mp-fg);
+}
+@media (hover: hover) and (pointer: fine) {
+  .cartlist__title:hover:not(:focus) {
+    background: var(--mp-wash);
+  }
+}
+.cartlist__meta {
+  font-size: 12px;
+  color: var(--mp-muted);
+}
+.cartlist__remove {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--mp-muted);
+  cursor: pointer;
+  transition:
+    background-color 150ms ease,
+    color 150ms ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .cartlist__remove:hover {
+    background: var(--mp-wash);
+    color: var(--mp-fg);
+  }
+  .cartlist__coverbtn:hover .cartlist__cover {
+    opacity: 0.85;
+  }
+}
+.cart-hint {
+  padding: 16px var(--mp-gutter) 24px;
+  font-size: 13px;
+}
+
+.cartlist__row--pending {
+  border-bottom: 1px dashed var(--mp-line);
+}
+.cartlist__row--pending .cartlist__coverbtn {
+  cursor: default;
+}
+.cartlist__row--pending .cartlist__cover {
+  opacity: 0.5;
+}
+
+/* ---------- Source marks ---------- */
+
+.topbar__source {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.topbar__source .mp-source-icon {
+  color: var(--mp-fg);
+}
+.cover {
+  position: relative;
+  flex: none;
+  display: block;
+}
+.cover__badge {
+  position: absolute;
+  right: -5px;
+  bottom: -5px;
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--mp-bg);
+  box-shadow: 0 0 0 1px var(--mp-line);
+}
+
+/* ---------- Scanning magpie ---------- */
+
+.scanbird {
+  position: relative;
+  height: 32px;
+  margin: 0 15px -1px 0;
+}
+.scanbird__track {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: left 600ms var(--mp-ease-out);
+}
+.scanbird__face {
+  transform-origin: 0 100%;
+}
+.scanbird__bounce {
+  position: relative;
+  width: 20px;
+  height: 28px;
+  margin-left: -10px;
+  transform-origin: 52% 100%;
+  animation: scan-hop 1s infinite;
+}
+/* Hop, land with a squash, peck, look up. */
+@keyframes scan-hop {
+  0%,
+  100% {
+    transform: none;
+  }
+  14% {
+    transform: scale(1.07, 0.9);
+    animation-timing-function: cubic-bezier(0.2, 0.7, 0.4, 1);
+  }
+  34% {
+    transform: translateY(-9px) scale(0.96, 1.05);
+    animation-timing-function: cubic-bezier(0.55, 0, 0.75, 0.4);
+  }
+  52% {
+    transform: scale(1.06, 0.92);
+  }
+  60% {
+    transform: none;
+  }
+  72% {
+    transform: rotate(18deg);
+  }
+  84% {
+    transform: none;
+  }
+}
+/* Done: the hop in progress lands, then the bird glides to the end of the
+   line and, when all went well, hops twice for joy. */
+.scanbird.is-done .scanbird__track {
+  transition: left 900ms var(--mp-ease-out);
+}
+.scanbird__bounce.is-landing,
+.scanbird__bounce.is-end {
+  animation: none;
+}
+.scanbird__bounce.is-end.is-success {
+  animation: scan-cheer 620ms backwards;
+}
+@keyframes scan-cheer {
+  0% {
+    transform: scale(1.08, 0.9);
+    animation-timing-function: cubic-bezier(0.2, 0.7, 0.4, 1);
+  }
+  22% {
+    transform: translateY(-8px) scale(0.96, 1.05);
+    animation-timing-function: cubic-bezier(0.55, 0, 0.75, 0.4);
+  }
+  44% {
+    transform: scale(1.07, 0.9);
+    animation-timing-function: cubic-bezier(0.2, 0.7, 0.4, 1);
+  }
+  66% {
+    transform: translateY(-5px);
+    animation-timing-function: cubic-bezier(0.55, 0, 0.75, 0.4);
+  }
+  86% {
+    transform: scale(1.04, 0.95);
+  }
+  100% {
+    transform: none;
+  }
+}
+.scanbird__cheer {
+  left: 52%;
+  top: 7px;
+}
+/* Reduce motion: each rule repeats the selector it undoes, so it always wins. */
+@media (prefers-reduced-motion: reduce) {
+  .thumb[aria-pressed='true'] .thumb__check svg,
+  .cartbar__count.is-bumped,
+  .scanbird__bounce,
+  .scanbird__bounce.is-end.is-success {
+    animation: none;
+  }
+  .thumb,
+  .thumb img,
+  .thumb__check {
+    transition-duration: 0ms;
+  }
+  .collect,
+  .collect .mp-progress__fill,
+  .collect.is-done .mp-progress__fill,
+  .scanbird__track,
+  .scanbird.is-done .scanbird__track,
+  .peek:not(.deliver) .mp-magpie,
+  .intro__chip .mp-source-icon,
+  .cartbar__chevron {
+    transition: none;
+  }
+  .thumb:active,
+  .thumb:hover img,
+  .peek__rise.is-winking .mp-magpie,
+  .dock__add:active,
+  .intro__chip:active,
+  .intro__chip:hover .mp-source-icon {
+    transform: none;
+  }
+}

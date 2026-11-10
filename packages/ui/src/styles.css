@@ -1,0 +1,621 @@
+/*
+ * Magpin design system. White, black, nothing else.
+ * Display: Anton (OFL). Text: Geist (OFL). Both bundled, no network.
+ */
+
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('./fonts/geist-latin-wght-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('./fonts/geist-latin-ext-wght-normal.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Anton';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./fonts/anton-latin-400-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Anton';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./fonts/anton-latin-ext-400-normal.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+:root {
+  --mp-bg: #ffffff;
+  --mp-fg: #000000;
+  --mp-muted: #6f6f6f;
+  --mp-faint: #b4b4b4;
+  --mp-line: #e9e9e9;
+  --mp-wash: #f4f4f4;
+
+  --mp-font: 'Geist', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --mp-display: 'Anton', 'Helvetica Neue', Impact, sans-serif;
+
+  --mp-ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --mp-ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+
+  --mp-gutter: 20px;
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--mp-bg);
+  color: var(--mp-fg);
+  font-family: var(--mp-font);
+  font-size: 14px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--mp-fg);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--mp-fg);
+  color: var(--mp-bg);
+}
+
+/* ---------- Type ---------- */
+
+.mp-display {
+  margin: 0;
+  font-family: var(--mp-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  /* Anton's capitals are tall: under 1, two lines touch. */
+  line-height: 1.04;
+  letter-spacing: 0.005em;
+  font-size: 44px;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+.mp-display--xl {
+  font-size: 72px;
+  line-height: 1;
+}
+
+.mp-label {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mp-muted);
+}
+
+.mp-text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--mp-fg);
+  text-wrap: pretty;
+}
+.mp-text--muted {
+  color: var(--mp-muted);
+}
+
+.mp-num {
+  font-variant-numeric: tabular-nums;
+}
+
+kbd.mp-kbd {
+  display: inline-block;
+  min-width: 22px;
+  padding: 1px 6px;
+  border: 1px solid var(--mp-line);
+  border-bottom-width: 2px;
+  border-radius: 6px;
+  font: 600 12px/18px var(--mp-font);
+  text-align: center;
+  color: var(--mp-fg);
+  background: var(--mp-bg);
+}
+
+/* ---------- Buttons ---------- */
+
+.mp-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 22px;
+  border: 0;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    transform 160ms var(--mp-ease-out),
+    background-color 150ms ease,
+    color 150ms ease,
+    box-shadow 150ms ease;
+}
+.mp-btn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+.mp-btn:disabled {
+  cursor: default;
+}
+
+.mp-btn--primary {
+  background: var(--mp-fg);
+  color: var(--mp-bg);
+}
+.mp-btn--primary:disabled {
+  background: var(--mp-wash);
+  color: var(--mp-faint);
+}
+
+.mp-btn--secondary {
+  background: var(--mp-bg);
+  color: var(--mp-fg);
+  box-shadow: inset 0 0 0 1.5px var(--mp-fg);
+}
+.mp-btn--secondary:disabled {
+  color: var(--mp-faint);
+  box-shadow: inset 0 0 0 1.5px var(--mp-line);
+}
+
+.mp-btn--ghost {
+  height: 32px;
+  padding: 0 10px;
+  background: transparent;
+  color: var(--mp-fg);
+}
+.mp-btn--block {
+  width: 100%;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  /* A touch of relief on hover: lighter, with a highlight along the top. */
+  .mp-btn--primary:hover:not(:disabled) {
+    background: #1f1f1f;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  }
+  .mp-btn--secondary:hover:not(:disabled),
+  .mp-btn--ghost:hover:not(:disabled) {
+    background: var(--mp-wash);
+  }
+}
+/* Sinks a little more on press, and the press itself is quicker. */
+.mp-btn:active:not(:disabled) {
+  transition-duration: 90ms;
+}
+
+/* A label that changes (Copy → Copied) comes in with a short blur, so the
+   swap reads as one movement rather than two words trading places. */
+.mp-swap {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  animation: mp-swap 260ms var(--mp-ease-out) backwards;
+}
+@keyframes mp-swap {
+  from {
+    opacity: 0;
+    filter: blur(3px);
+    transform: translateY(3px);
+  }
+}
+
+/* Text link styled button, used for low-emphasis actions. On hover its
+   underline draws in from the left; it leaves to the right. */
+.mp-link {
+  padding: 0 0 2px;
+  border: 0;
+  background: linear-gradient(currentColor, currentColor) right bottom / 0 1px no-repeat;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--mp-fg);
+  cursor: pointer;
+  transition:
+    background-size 240ms var(--mp-ease-out),
+    opacity 120ms ease;
+}
+.mp-link:active:not(:disabled) {
+  opacity: 0.6;
+}
+.mp-link:disabled {
+  color: var(--mp-faint);
+  cursor: default;
+}
+@media (hover: hover) and (pointer: fine) {
+  .mp-link:hover:not(:disabled) {
+    background-position: left bottom;
+    background-size: 100% 1px;
+  }
+}
+
+/* ---------- Progress ---------- */
+
+.mp-progress {
+  position: relative;
+  height: 2px;
+  overflow: hidden;
+  background: var(--mp-line);
+}
+.mp-progress__fill {
+  position: absolute;
+  inset: 0;
+  background: var(--mp-fg);
+  transform-origin: left center;
+  transition: transform 200ms linear;
+}
+.mp-progress--indeterminate .mp-progress__fill {
+  width: 30%;
+  animation: mp-indeterminate 1.1s var(--mp-ease-in-out) infinite;
+}
+@keyframes mp-indeterminate {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(340%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mp-swap {
+    animation: none;
+  }
+  .mp-btn,
+  .mp-link,
+  .mp-progress__fill {
+    transition-duration: 0ms;
+  }
+  .mp-btn:active:not(:disabled) {
+    transform: none;
+  }
+  .mp-progress--indeterminate .mp-progress__fill {
+    animation-duration: 2.4s;
+  }
+}
+
+/* ---------- Source marks ---------- */
+
+.mp-source-icon {
+  display: inline-block;
+  flex: none;
+  line-height: 0;
+}
+.mp-source-icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* ---------- Magpie character ---------- */
+
+.mp-magpie {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--mp-fg);
+  transform-origin: 52% 100%;
+  will-change: transform;
+  pointer-events: none;
+}
+.mp-magpie svg {
+  display: block;
+  overflow: visible;
+}
+/* Eyes: open, squinted (squashed up), or shut (a thin crescent on top). */
+.mp-magpie__eye,
+.mp-magpie__shut {
+  fill: var(--mp-bg);
+  transform-box: fill-box;
+  transition: transform 220ms var(--mp-ease-out);
+}
+.mp-magpie__eye {
+  transform-origin: 50% 0;
+}
+.mp-magpie__shut {
+  transform-origin: 50% 50%;
+  transform: scaleY(0);
+}
+[data-eyes='squint'] .mp-magpie__eye {
+  transform: scaleY(0.5);
+}
+[data-eyes='closed'] .mp-magpie__eye {
+  transform: scaleY(0);
+  transition-duration: 140ms;
+}
+[data-eyes='closed'] .mp-magpie__shut {
+  transform: scaleY(1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .mp-magpie__eye,
+  .mp-magpie__shut {
+    transition: none;
+  }
+}
+/* The head alone (peeks). Its eye can wink: squash it from the top. */
+.mp-head {
+  display: block;
+  overflow: visible;
+}
+.mp-head__eye {
+  fill: var(--mp-bg);
+  transform-box: fill-box;
+  transform-origin: 50% 0;
+}
+/* The magpie stands on the baseline, at the end of the last word. */
+.mp-perch {
+  position: relative;
+  display: inline-block;
+  margin-left: 8px;
+  vertical-align: baseline;
+}
+.mp-perch__land {
+  position: absolute;
+  inset: 0;
+  transform-origin: 52% 100%;
+  animation: mp-perch-land 560ms backwards;
+}
+@keyframes mp-perch-land {
+  from {
+    opacity: 0;
+    transform: translateY(-46px);
+    animation-timing-function: cubic-bezier(0.5, 0, 0.9, 0.5);
+  }
+  20% {
+    opacity: 1;
+  }
+  58% {
+    transform: scale(1.1, 0.86);
+    animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  80% {
+    transform: scale(0.97, 1.04);
+  }
+  to {
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mp-perch__land {
+    animation: none;
+  }
+}
+/* Falling twigs (TwigRain): a canvas over its host that never takes a click. */
+.mp-twig-rain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+/* The success: short rays bursting out above the bird's head. */
+.mp-cheer {
+  position: absolute;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+.mp-cheer i {
+  position: absolute;
+  left: calc(var(--w) / -2);
+  top: calc(var(--len) / -2);
+  width: var(--w);
+  height: var(--len);
+  border-radius: var(--w);
+  background: var(--mp-fg);
+  opacity: 0;
+  animation: mp-cheer 720ms var(--mp-ease-out) backwards;
+}
+@keyframes mp-cheer {
+  from {
+    opacity: 0;
+    transform: rotate(var(--a)) translateY(calc(var(--r) * -0.6)) scaleY(0.3);
+  }
+  30% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: rotate(var(--a)) translateY(calc(var(--r) * -1.13)) scaleY(1);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mp-cheer {
+    display: none;
+  }
+}
+
+/* ---------- ⌘ V keycaps (paste screen, website) ---------- */
+
+/* ⌘ V keycaps, drawn like real Mac keys: the command key a bit wider, its
+   glyph top right and its name bottom left. Each has a side (the darker
+   band under it) and a soft shadow on the page; pressed, it sinks into
+   them. Under the bird's weight it gives a little. */
+.keys {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  padding-top: 54px;
+}
+.keycap {
+  position: relative;
+  display: block;
+  height: 84px;
+  border-radius: 17px;
+  background: linear-gradient(180deg, #232323 0%, #0a0a0a 55%, #000 100%);
+  color: #fff;
+  font-family: var(--mp-font);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    0 6px 0 #3a3a3a,
+    0 16px 22px -10px rgba(0, 0, 0, 0.45);
+  transition:
+    transform 110ms var(--mp-ease-out),
+    box-shadow 110ms var(--mp-ease-out);
+  animation: key-in 620ms var(--mp-ease-out) backwards;
+  animation-delay: calc(var(--i) * 80ms);
+}
+.keycap--mod {
+  width: 104px;
+}
+.keycap--v {
+  width: 84px;
+}
+.keycap__glyph {
+  position: absolute;
+  top: 11px;
+  right: 13px;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1;
+}
+.keycap__name {
+  position: absolute;
+  left: 13px;
+  bottom: 12px;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.01em;
+}
+.keycap__letter {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1;
+}
+.keycap.is-perched {
+  transform: translateY(1.5px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    0 4.5px 0 #3a3a3a,
+    0 14px 20px -10px rgba(0, 0, 0, 0.45);
+}
+.keycap:active,
+.keycap.is-down {
+  transform: translateY(5px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 1px 0 #3a3a3a,
+    0 8px 12px -8px rgba(0, 0, 0, 0.4);
+  transition-duration: 70ms;
+}
+@keyframes key-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .keycap {
+    transition-duration: 0ms;
+    animation: none;
+  }
+}
+
+/* ---------- Nest progress ---------- */
+
+.nest {
+  position: relative;
+  flex: none;
+  height: 150px;
+  margin-top: 20px;
+  overflow: hidden;
+}
+.nest__layer {
+  display: block;
+  overflow: visible;
+}
+.nest__layer--front {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.nest__stage {
+  position: absolute;
+  inset: 0;
+}
+.nest__bowl {
+  fill: var(--mp-fg);
+  transition: opacity 400ms ease;
+}
+.nest__bowl.is-hidden {
+  opacity: 0;
+}
+/* Each twig has a thin outline of page around it, so the weave reads. */
+.nest__halo,
+.nest__stem {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.nest__halo {
+  stroke: var(--mp-bg);
+}
+.nest__stem {
+  stroke: var(--mp-fg);
+}
+.nest__twig {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: nest-twig-in 420ms var(--mp-ease-out) both;
+}
+/* Dropped from the beak: falls in, tilts, settles. */
+@keyframes nest-twig-in {
+  from {
+    opacity: 0;
+    transform: translateY(-14px) rotate(-14deg);
+  }
+  40% {
+    opacity: 1;
+  }
+  70% {
+    transform: translateY(1px) rotate(2deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nest__twig {
+    animation: none;
+  }
+}
