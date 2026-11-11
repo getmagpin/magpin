@@ -94,18 +94,19 @@ gh repo create magpin --public --source . --remote origin --push
 
 **2.2 Obtenir l'ID**
 - Le manifest a encore `"id": "magpin-dev"`.
-- À la première publication, Figma attribue un ID au plugin. Le mettre dans `apps/figma-plugin/manifest.json`, relancer `pnpm build:plugin`, puis publier.
+- Figma attribue un vrai ID au plugin (à la publication, ou via **Plugins → Development → New plugin…**). Le mettre dans `apps/figma-plugin/manifest.json`, relancer `pnpm build:plugin`, réimporter le manifest, puis publier.
 - L'URL publique sera `https://www.figma.com/community/plugin/<ID>/magpin`.
 
 **2.3 Publier**
-- Dans Figma desktop : **Plugins → Manage plugins → Magpin → Publish**.
+- Prérequis : l'app Figma desktop, un compte Figma (`getmagpin@gmail.com`) avec la **validation en 2 étapes** activée (obligatoire pour publier).
+- Dans Figma desktop : logo Figma en haut à gauche → **Plugins → Manage plugins**, puis **Publish** à côté de Magpin.
 - Informations demandées :
   - **Nom** : Magpin
   - **Tagline** : Your next moodboard is one paste away.
   - **Description** : voir le texte prêt plus bas.
   - **Icône** : `assets/logo/head-sticker-128.png` (un plugin en développement ne peut pas avoir d'icône : Figma ne la prend que dans ce formulaire).
-  - **Couverture** : 1920 × 960 (à produire).
-  - **Images de carrousel** : facultatives, recommandées.
+  - **Miniature (thumbnail)** : `assets/store/figma/cover.png` (1920 × 1080, la taille que Figma recommande).
+  - **Carrousel** (jusqu'à 9) : `assets/store/figma/carousel-1-collect.png` à `carousel-5-free.png`, dans l'ordre.
   - **Catégorie** : Design tools ou Inspiration.
   - **Contact support** : `getmagpin@gmail.com`.
   - **Éditeurs** : Figma et FigJam (déjà dans le manifest).
@@ -119,7 +120,7 @@ Texte de description Figma (anglais, prêt à coller) :
 
 > Magpin turns a board from Pinterest, Are.na, Cosmos or Savee into a Figma moodboard, sorted by color, with its palette.
 >
-> 1. In Chrome, open a board and click Magpin, then Collect this board (needs the free Magpin extension).
+> 1. In Chrome, open a board and click Magpin, then Collect this board (needs the free Magpin Chrome extension: https://magpin.pages.dev).
 > 2. Copy for Figma.
 > 3. Run Magpin here and press ⌘V (Ctrl+V), then Create moodboard.
 >
