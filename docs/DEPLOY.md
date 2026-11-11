@@ -188,7 +188,7 @@ pnpm --filter @magpin/extension zip
 - **URL de la politique de confidentialité** : `https://magpin.pages.dev/privacy`.
 
 **3.6 Distribution**
-- Brouillon complet le 11 novembre 2026 (éditeur « Magpin », non-trader, catégorie Art & Design, seul « Website content » déclaré), à envoyer avec **Submit for review**. Le compte Google `getmagpin` a la validation en 2 étapes (exigée pour envoyer un ZIP).
+- ✅ Envoyé pour examen le 11 novembre 2026 (éditeur « Magpin », non-trader, catégorie Art & Design, seul « Website content » déclaré, instructions de test fournies). Il a fallu une adresse de contact vérifiée dans **Settings** avant de pouvoir envoyer. Le compte Google `getmagpin` a la validation en 2 étapes (exigée pour envoyer un ZIP).
 - Public, tous les pays, gratuit.
 - Envoyer pour examen.
 - **Validation** : souvent quelques jours. Elle peut être plus longue, car l'extension demande l'accès à des sites entiers (pinterest.com…).
