@@ -149,7 +149,7 @@ pnpm --filter @magpin/extension zip
 
 **3.3 Nouvel élément**
 - Envoyer le ZIP. L'ID de l'extension apparaît tout de suite.
-- L'URL publique sera `https://chromewebstore.google.com/detail/<ID>`.
+- ID : `cickeilgdjpgcdlopkbdjhilmlfpmein`. L'URL publique sera `https://chromewebstore.google.com/detail/cickeilgdjpgcdlopkbdjhilmlfpmein`.
 
 **3.4 Fiche du store**
 - **Langue** : anglais.
@@ -211,7 +211,7 @@ Description Chrome Web Store (anglais, prête à coller) :
 
 ## 4. Une fois les URLs connues, puis après validation
 
-1. **`apps/site/src/links.ts`** : mettre `CHROME_STORE_URL` et `FIGMA_PLUGIN_URL`, puis pousser. Le site se redéploie tout seul.
+1. **`apps/site/src/links.ts`** : mettre `CHROME_STORE_URL` (`https://chromewebstore.google.com/detail/cickeilgdjpgcdlopkbdjhilmlfpmein`) et `FIGMA_PLUGIN_URL` (`https://www.figma.com/community/plugin/1702182298012784493/magpin`), puis pousser. Le site se redéploie tout seul. Remplacer aussi les deux badges « coming soon » du README par ces liens.
 2. **`apps/extension/src/config.ts`** : si l'URL du plugin n'y était pas au moment de l'envoi, publier la version 1.0.1 avec la bonne URL.
 3. **Git** :
 
