@@ -114,6 +114,7 @@ gh repo create magpin --public --source . --remote origin --push
 - Les domaines réseau sont déjà déclarés dans le manifest, avec leur justification.
 
 **2.4 Validation**
+- ✅ Envoyé le 11 novembre 2026, publié « By getmagpin », en attente de validation. Réponses données au formulaire « Data security » : pas de backend ; requêtes réseau = images seulement ; pas d'authentification ; stockage local (réglages dans `figma.clientStorage`, ID du pin d'origine via `setPluginData`) ; développeur seul.
 - Figma relit les plugins avant de les rendre publics. Compter quelques jours ouvrés, parfois plus.
 
 Texte de description Figma (anglais, prêt à coller) :
@@ -133,7 +134,7 @@ Texte de description Figma (anglais, prêt à coller) :
 ## 3. Chrome Web Store : l'extension
 
 **3.1 Avant d'envoyer**
-- Dans `apps/extension/src/config.ts`, mettre `FIGMA_PLUGIN_URL` à l'URL du plugin (point 2.2). Sinon, il faudra publier une mise à jour juste après.
+- ✅ `FIGMA_PLUGIN_URL` dans `apps/extension/src/config.ts` pointe vers la page du plugin (point 2.2).
 - Vérifier la version dans `apps/extension/package.json` (1.0.0).
 - Créer le ZIP à envoyer :
 
@@ -152,12 +153,12 @@ pnpm --filter @magpin/extension zip
 
 **3.4 Fiche du store**
 - **Langue** : anglais.
-- **Catégorie** : Productivity, ou Art & Design s'il est proposé.
+- **Catégorie** : Lifestyle → **Art & Design**.
 - **Description** : voir le texte prêt plus bas.
-- **Icône** : 128 × 128, déjà dans l'extension.
-- **Captures** : 1 à 5, au format 1280 × 800 (à produire).
-- **Petite vignette promotionnelle** : 440 × 280 (à produire).
-- **Grande bannière** : 1400 × 560, facultative.
+- **Icône** : `apps/extension/public/icon/128.png` (128 × 128, aussi dans le ZIP).
+- **Captures** : `assets/store/chrome/screenshot-1-collect.png` à `screenshot-5-free.png` (1280 × 800, PNG 24 bits).
+- **Petite vignette promotionnelle** : `assets/store/chrome/promo-small-440x280.png`.
+- **Grande bannière** (facultative) : `assets/store/chrome/promo-marquee-1400x560.png`.
 - **Site web** : `https://magpin.pages.dev`.
 - **Support** : `getmagpin@gmail.com`.
 

@@ -5,7 +5,7 @@ import { defineConfig } from 'wxt';
 export default defineConfig({
   manifest: {
     name: 'Magpin',
-    description: 'Your moodboard arrives already sorted. Collect boards from Pinterest, Are.na, Cosmos and Savee, paste them in Figma. Free.',
+    description: 'Your next moodboard is one paste away. Collect boards from Pinterest, Are.na, Cosmos and Savee, paste them in Figma. Free.',
     // chrome.sidePanel.setPanelBehavior (the toolbar icon opens the panel) needs Chrome 116.
     minimum_chrome_version: '116',
     permissions: ['sidePanel', 'clipboardWrite', 'downloads', 'scripting', 'storage'],

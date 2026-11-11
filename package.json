@@ -2,7 +2,7 @@
   "name": "magpin",
   "private": true,
   "version": "0.1.0",
-  "description": "Magpin \u2014 your moodboard arrives already sorted. Chrome extension + Figma plugin.",
+  "description": "Magpin: your next moodboard is one paste away. Chrome extension + Figma plugin.",
   "type": "module",
   "packageManager": "pnpm@12.18.0",
   "engines": {
