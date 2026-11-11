@@ -13,7 +13,9 @@ import { TWIG, type Twig, type TwigWorld, createWorld, opacityOf, resizeWorld, s
 const BASE = { x: 175, y: 86 };
 const OWN_ANGLE = Math.atan2(-16 - 86, 237 - 175);
 const SCALE = TWIG.length / Math.hypot(237 - 175, -16 - 86);
-const PATHS = TWIG_PATHS.map((d) => new Path2D(d));
+// Built on first draw: Path2D only exists in a browser (the site renders this module at build time too).
+let paths: Path2D[] | null = null;
+const twigPaths = () => (paths ??= TWIG_PATHS.map((d) => new Path2D(d)));
 
 function draw(ctx: CanvasRenderingContext2D, twig: Twig) {
   const alpha = opacityOf(twig);
@@ -36,12 +38,12 @@ function draw(ctx: CanvasRenderingContext2D, twig: Twig) {
   ctx.lineJoin = 'round';
   // A thin outline of page around each twig, so the pile reads.
   ctx.strokeStyle = '#fff';
-  PATHS.forEach((path, i) => {
+  twigPaths().forEach((path, i) => {
     ctx.lineWidth = (i === 0 ? 10 : 8) + 9;
     ctx.stroke(path);
   });
   ctx.strokeStyle = '#000';
-  PATHS.forEach((path, i) => {
+  twigPaths().forEach((path, i) => {
     ctx.lineWidth = i === 0 ? 10 : 8;
     ctx.stroke(path);
   });

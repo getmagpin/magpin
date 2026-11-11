@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && vite build --ssr src/prerender.tsx --outDir node_modules/.cache/prerender --emptyOutDir && node scripts/prerender.mjs",
     "preview": "vite preview",
     "typecheck": "tsc -p tsconfig.json"
   },
@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.10.6",
+    "preact-render-to-string": "6.8.2",
     "typescript": "~5.9.3",
     "vite": "^8.3.6"
   }

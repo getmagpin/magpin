@@ -242,11 +242,14 @@ importers:
         version: link:../../packages/ui
       preact:
         specifier: ^10.29.8
-        version: 10.29.8
+        version: 10.29.8(preact-render-to-string@6.8.2)
     devDependencies:
       '@preact/preset-vite':
         specifier: ^2.10.6
         version: 2.10.6(@babel/core@7.29.13)(preact@10.29.8)(vite@8.3.6(@types/node@26.6.6)(jiti@2.7.0))
+      preact-render-to-string:
+        specifier: 6.8.2
+        version: 6.8.2(preact@10.29.8)
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
@@ -1069,6 +1072,11 @@ packages:
     resolution: {integrity: sha512-LJlKCCAUFKOuZxipUdYw1NzIITEsPcgyOG9LkvRJvuKj/bRzbuRY0ARXvL0pWGpsZvn8jku+LMep2eU0seHp8g==}
     engines: {node: ^10 || ^12 || >=14}
 
+  preact-render-to-string@6.8.2:
+    resolution: {integrity: sha512-Hdx7cKD3AMYgt795TdddBpUbuGEFoL/VeA6s7VrBt9Gjt0r6rCy5wMp5xkDjQ9cbKj62frHsEx1x8yV6EjoOpg==}
+    peerDependencies:
+      preact: '>=10 || >= 11.0.0-0'
+
   preact@10.29.8:
     resolution: {integrity: sha512-ej2aVZ+vZ8WO7tvlQWRM9N63A0KzF9q4mWJfDUHgYaIofWY9hu74QdnQrjoPMmZi2/nZ5gN0bJCQF49xQqx09Q==}
     peerDependencies:
@@ -1586,7 +1594,7 @@ snapshots:
 
   '@prefresh/core@1.5.11(preact@10.29.8)':
     dependencies:
-      preact: 10.29.8
+      preact: 10.29.8(preact-render-to-string@6.8.2)
 
   '@prefresh/utils@1.2.1': {}
 
@@ -1597,7 +1605,7 @@ snapshots:
       '@prefresh/core': 1.5.11(preact@10.29.8)
       '@prefresh/utils': 1.2.1
       '@rollup/pluginutils': 4.2.1
-      preact: 10.29.8
+      preact: 10.29.8(preact-render-to-string@6.8.2)
       vite: 8.3.6(@types/node@26.6.6)(jiti@2.7.0)
     transitivePeerDependencies:
       - supports-color
@@ -2117,7 +2125,15 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.2
 
+  preact-render-to-string@6.8.2(preact@10.29.8):
+    dependencies:
+      preact: 10.29.8(preact-render-to-string@6.8.2)
+
   preact@10.29.8: {}
+
+  preact@10.29.8(preact-render-to-string@6.8.2):
+    optionalDependencies:
+      preact-render-to-string: 6.8.2(preact@10.29.8)
 
   publish-browser-extension@6.2.0:
     dependencies:

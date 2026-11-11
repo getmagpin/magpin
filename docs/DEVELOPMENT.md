@@ -60,6 +60,8 @@ The store links live in `apps/site/src/links.ts`: replace them with the Chrome W
 
 Lighthouse (production build, mobile and desktop): 100 in Performance, Accessibility, Best Practices and SEO. What keeps it there: the stylesheet is inlined in `index.html` and the two hero fonts are preloaded (a small Vite plugin in `apps/site/vite.config.ts`); the sections below the hero use `content-visibility: auto` with roughly their real heights, and every section is drawn before an in-page jump (`#how`, a page opened at `#compare`) so it lands exactly. Build with `SITE_URL=https://…/` to make the share image (`og-image.png`, 1200×630) absolute and add the canonical URL. `privacy.html` is the privacy policy the Chrome Web Store asks for (contact: getmagpin@gmail.com). The site lives at https://magpin.pages.dev/ (Cloudflare Pages, free). How to publish everything: [DEPLOY.md](DEPLOY.md).
 
+Search engines get the whole page as HTML: after `vite build`, `pnpm build` renders `<App />` to a string (`src/prerender.tsx`, an SSR build) and `scripts/prerender.mjs` writes it into `dist/index.html`. In the browser, `render()` takes those elements over (Preact reuses the existing nodes and fixes any attribute that differs), so nothing flashes. `resolve.dedupe: ['preact']` keeps one Preact for the page and `@magpin/ui`. With `SITE_URL`, the `magpin:seo` plugin in `vite.config.ts` also writes `robots.txt`, `sitemap.xml`, `llms.txt` (a summary for AI assistants) and JSON-LD structured data (WebSite, Organization, SoftwareApplication). `public/404.html` makes unknown addresses answer 404 instead of the home page.
+
 ### Import the plugin in Figma
 
 1. In the Figma desktop app, open any file.

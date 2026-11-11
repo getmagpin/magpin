@@ -286,7 +286,7 @@ function Footer({ drops, pileAt }: { drops: number; pileAt: (clientX: number) =>
         </span>
         <span class="footer__line">Free. Unlimited. No account. No tracking.</span>
         <span class="footer__links">
-          <a href="./privacy.html">Privacy</a>
+          <a href="./privacy">Privacy</a>
           <a href={CHROME_STORE_URL} target="_blank" rel="noreferrer">
             Chrome Web Store
           </a>
