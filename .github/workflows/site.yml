@@ -10,7 +10,6 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
-  deployments: write
 concurrency:
   group: site
   cancel-in-progress: true
@@ -30,10 +29,10 @@ jobs:
       - run: pnpm --filter @magpin/site build
         env:
           SITE_URL: https://magpin.pages.dev/
+      # Wrangler runs through npx: wrangler-action installs it with `pnpm add`,
+      # which pnpm refuses at the root of a workspace.
       - name: Publish to Cloudflare Pages
         if: env.CLOUDFLARE_API_TOKEN != ''
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy apps/site/dist --project-name=magpin --branch=main
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: npx --yes wrangler@4.156.0 pages deploy apps/site/dist --project-name=magpin --branch=main --commit-dirty=true
