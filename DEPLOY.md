@@ -52,10 +52,11 @@ SITE_URL=https://magpin.pages.dev/ pnpm build:site
 
 - Vérifier :
   - `https://magpin.pages.dev/` ;
-  - `https://magpin.pages.dev/privacy.html`.
+  - `https://magpin.pages.dev/privacy` (Cloudflare redirige `privacy.html` vers cette adresse).
 
 **1.2 Mettre le code sur GitHub**
-- ✅ Prêt : le `.gitignore` exclut ce qui reste privé (brief, `Cards/`, `spikes/`, réglages locaux) et le fichier `LICENSE` (MIT) existe.
+- ✅ Fait le 11 novembre 2026 : `https://github.com/getmagpin/magpin`, public, licence MIT reconnue.
+- Le `.gitignore` exclut ce qui reste privé (brief, `Cards/`, `spikes/`, réglages locaux) et le fichier `LICENSE` (MIT) existe.
 - Les commits sont signés « Magpin » avec l'adresse anonyme de GitHub (`355110437+getmagpin@users.noreply.github.com`), pas avec un mail perso. C'est un réglage local à ce repo.
 - Connecter l'outil GitHub au compte `getmagpin`, avec `gh auth login`.
 - Premier commit, puis création du repo et envoi :
@@ -65,6 +66,7 @@ gh repo create magpin --public --source . --remote origin --push
 ```
 
 **1.3 Mise à jour automatique du site à chaque envoi**
+- ✅ Fait le 11 novembre 2026 : les deux secrets existent et le workflow publie le site en production.
 - Chez Cloudflare, créer un jeton :
   - aller dans **My Profile → API Tokens → Create Token → Custom token** ;
   - donner la permission **Account → Cloudflare Pages → Edit**.
@@ -72,7 +74,7 @@ gh repo create magpin --public --source . --remote origin --push
 - Dans le repo GitHub, aller dans **Settings → Secrets and variables → Actions → Secrets** et créer :
   - `CLOUDFLARE_API_TOKEN` ;
   - `CLOUDFLARE_ACCOUNT_ID`.
-- Le workflow est prêt : `.github/workflows/site.yml`. Il construit le site pour `https://magpin.pages.dev/` et le publie à chaque envoi sur `main` qui touche le site. Tant que les deux secrets n'existent pas, il construit le site sans le publier.
+- Le workflow : `.github/workflows/site.yml`. Il appelle Wrangler avec `npx` (l'action `wrangler-action` échoue dans un workspace pnpm). Il construit le site pour `https://magpin.pages.dev/` et le publie à chaque envoi sur `main` qui touche le site. Tant que les deux secrets n'existent pas, il construit le site sans le publier.
 - `.github/workflows/checks.yml` lance typecheck, tests et builds sur chaque envoi et chaque pull request.
 - Avec `SITE_URL`, le build rend l'image de partage absolue et ajoute la balise `canonical` et `og:url`.
 
@@ -181,7 +183,7 @@ pnpm --filter @magpin/extension zip
   - Cocher « Website content » : l'extension lit les adresses des images et le titre du board sur la page.
   - Certifier les trois engagements : pas de vente, pas d'usage sans rapport avec la fonction, pas d'usage pour le crédit.
   - Rien n'est envoyé au développeur.
-- **URL de la politique de confidentialité** : `https://magpin.pages.dev/privacy.html`.
+- **URL de la politique de confidentialité** : `https://magpin.pages.dev/privacy`.
 
 **3.6 Distribution**
 - Public, tous les pays, gratuit.
