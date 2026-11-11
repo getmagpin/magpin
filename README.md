@@ -5,7 +5,7 @@
 <h3 align="center">Your next moodboard is one paste away.</h3>
 
 <p align="center">
-  Magpin turns any board from Pinterest, Are.na, Cosmos or Savee into a Figma moodboard,<br>
+  Magpin turns any board from Pinterest, Are.na, Cosmos or Savee into a Figma moodboard,
   sorted by color, with its palette. Free, unlimited, no account.
 </p>
 
