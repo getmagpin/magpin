@@ -78,6 +78,12 @@ gh repo create magpin --public --source . --remote origin --push
 - `.github/workflows/checks.yml` lance typecheck, tests et builds sur chaque envoi et chaque pull request.
 - Avec `SITE_URL`, le build rend l'image de partage absolue et ajoute la balise `canonical` et `og:url`.
 
+**1.3 bis Google Search Console**
+- ✅ Site validé le 11 novembre 2026 (compte getmagpin, méthode « HTML file ») : le fichier `apps/site/public/google56862121717dbd04.html` doit rester en ligne, sinon la validation saute.
+- Envoyer `sitemap.xml` (menu **Sitemaps**) et demander l'indexation de la page d'accueil (**URL inspection → Request indexing**).
+- Bing Webmaster Tools (https://www.bing.com/webmasters) : **Import from Google Search Console**, pour Bing, DuckDuckGo et la recherche de ChatGPT.
+- Une fois l'extension validée : choisir `https://magpin.pages.dev` comme **Official URL** dans sa fiche Chrome (même compte Google).
+
 **1.4 Plus tard : un vrai domaine**
 - Dans le projet Cloudflare Pages : **Custom domains → Set up a domain**.
 - Mettre à jour `SITE_URL` dans le workflow.
