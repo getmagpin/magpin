@@ -173,7 +173,7 @@ No `tabs`, no `<all_urls>`, no remote code, no analytics.
 | `editorType` | `figma`, `figjam` | Works in both. FigJam gets the layout and palette squares, no color variables. |
 | `documentAccess` | `dynamic-page` | Required for new plugins. |
 
-The `id` in `apps/figma-plugin/manifest.json` is a development placeholder. Replace it with the id Figma gives when the plugin is first published, and update `FIGMA_PLUGIN_URL` in `apps/extension/src/config.ts`.
+The `id` in `apps/figma-plugin/manifest.json` (`1702182298012784493`) is the plugin's Figma Community id; the Community page is `https://www.figma.com/community/plugin/1702182298012784493/magpin` (`FIGMA_PLUGIN_URL` in `apps/extension/src/config.ts`).
 
 ### Privacy
 

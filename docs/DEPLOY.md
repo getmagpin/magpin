@@ -93,7 +93,7 @@ gh repo create magpin --public --source . --remote origin --push
 - Faire les tests manuels du point 0.
 
 **2.2 Obtenir l'ID**
-- Le manifest a encore `"id": "magpin-dev"`.
+- ✅ Fait le 11 novembre 2026 : ID `1702182298012784493` (bouton **Generate ID…** de la dernière étape de publication), dans le manifest et dans `FIGMA_PLUGIN_URL` de l'extension.
 - Figma attribue un vrai ID au plugin (à la publication, ou via **Plugins → Development → New plugin…**). Le mettre dans `apps/figma-plugin/manifest.json`, relancer `pnpm build:plugin`, réimporter le manifest, puis publier.
 - L'URL publique sera `https://www.figma.com/community/plugin/<ID>/magpin`.
 
