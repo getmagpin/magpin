@@ -1,93 +1,446 @@
+/* The page Chrome opens right after the install: the same voice as the website
+   (Anton title, black pills, quiet grey pictures), three steps to the first
+   moodboard, and links back to the site. */
+
 .welcome {
   --mp-gutter: clamp(20px, 4vw, 48px);
-  max-width: 1280px;
+  max-width: 1200px;
   min-height: 100vh;
   margin: 0 auto;
   padding: 0 var(--mp-gutter);
   display: flex;
   flex-direction: column;
 }
+.welcome a:not(.mp-btn) {
+  color: inherit;
+}
+
+/* ---------- Top bar ---------- */
 
 .welcome__top {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 88px;
+  gap: 16px;
+  height: 84px;
 }
 .welcome__brand {
   display: inline-flex;
   align-items: center;
   gap: 10px;
   font-family: var(--mp-display);
-  font-size: 26px;
+  font-size: 24px;
   letter-spacing: 0.02em;
   text-transform: uppercase;
+  text-decoration: none;
+}
+.welcome__nav,
+.welcome__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 22px;
+  font-size: 14px;
+}
+.welcome__nav a,
+.welcome__links a {
+  text-decoration: none;
+  color: var(--mp-fg);
+  transition: color 160ms ease;
+}
+.welcome__out {
+  display: inline-block;
+  margin-left: 3px;
+  font-size: 0.85em;
+  color: var(--mp-muted);
+  transition: transform 160ms var(--mp-ease-out);
+}
+@media (hover: hover) {
+  .welcome__nav a:hover,
+  .welcome__links a:hover {
+    color: var(--mp-muted);
+  }
+  a:hover > .welcome__out {
+    transform: translate(1px, -1px);
+  }
 }
 
+/* ---------- Hero ---------- */
+
 .welcome__hero {
-  padding: clamp(24px, 5vh, 72px) 0 clamp(36px, 6vh, 80px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 440px);
+  align-items: center;
+  gap: 40px 56px;
+  padding: clamp(20px, 5vh, 64px) 0 clamp(40px, 7vh, 88px);
+}
+@media (max-width: 980px) {
+  .welcome__hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.welcome__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 22px;
+  padding: 6px 12px 6px 7px;
+  border-radius: 999px;
+  background: var(--mp-wash);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.welcome__tick {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--mp-fg);
+  color: var(--mp-bg);
 }
 .welcome__title {
-  font-size: clamp(52px, 7.2vw, 112px);
-  line-height: 1;
-  max-width: 15ch;
+  font-size: clamp(48px, 6.8vw, 104px);
+  line-height: 0.98;
+  max-width: 14ch;
 }
 .welcome__last {
   white-space: nowrap;
 }
 .welcome__lead {
-  margin: 28px 0 0;
-  max-width: 34ch;
-  font-size: clamp(17px, 1.6vw, 20px);
-  line-height: 1.4;
+  margin: 26px 0 0;
+  max-width: 36ch;
+  font-size: clamp(17px, 1.5vw, 20px);
+  line-height: 1.45;
   font-weight: 350;
+  color: #2a2a2a;
 }
+.welcome__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+.welcome__ctas .mp-btn {
+  text-decoration: none;
+}
+.welcome__ctas .welcome__out {
+  color: inherit;
+  opacity: 0.6;
+}
+
+/* The moodboard Magpin builds: tiles come in one by one, sorted, then the palette. */
+.board {
+  margin: 0;
+  width: min(440px, 100%);
+  padding: 16px 16px 18px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow:
+    0 0 0 1px var(--mp-line),
+    0 30px 60px -32px rgb(0 0 0 / 0.28);
+}
+.board__title {
+  margin: 0 2px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--mp-muted);
+}
+.board__body {
+  display: flex;
+  gap: 14px;
+}
+.board__grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 6px;
+}
+.board__grid span {
+  aspect-ratio: 1;
+  border-radius: 7px;
+  animation: tile-in 420ms var(--mp-ease-out) backwards;
+  animation-delay: calc(300ms + var(--i) * 34ms);
+}
+.board__palette {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 92px;
+  margin: 0;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: var(--mp-wash);
+  list-style: none;
+  font-size: 10.5px;
+  font-weight: 500;
+}
+.board__palette li {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+  animation: tile-in 360ms var(--mp-ease-out) backwards;
+  animation-delay: calc(1250ms + var(--i) * 60ms);
+}
+.board__palette li span {
+  width: 14px;
+  height: 14px;
+  flex: none;
+  border-radius: 4px;
+}
+@keyframes tile-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+/* ---------- Steps ---------- */
 
 .welcome__steps {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  border-top: 1px solid var(--mp-fg);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
 }
-.welcome__steps li {
+.step {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 12px;
-  padding: 28px 32px 36px 0;
+  padding: 12px 12px 28px;
+  border: 1px solid var(--mp-line);
+  border-radius: 22px;
 }
-.welcome__steps h2 {
-  margin: 0;
+.step__n {
+  margin: 22px 12px 0;
+  font-family: var(--mp-display);
+  font-size: 40px;
+  line-height: 1;
+}
+.step h2 {
+  margin: 12px 12px 8px;
   font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
-.welcome__steps p {
-  margin: 0;
-  max-width: 32ch;
+.step p {
+  margin: 0 12px;
+  max-width: 34ch;
   color: var(--mp-muted);
   line-height: 1.55;
+  text-wrap: pretty;
 }
-.welcome__steps p strong {
+.step p strong {
   color: var(--mp-fg);
   font-weight: 600;
 }
-.welcome__steps .mp-btn {
-  margin-top: 8px;
-  text-decoration: none;
-}
-.welcome__n {
-  font-family: var(--mp-display);
-  font-size: 44px;
-  line-height: 1;
+.welcome__link {
+  color: var(--mp-fg) !important;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  white-space: nowrap;
 }
 
+/* The pictures above each step: quiet grey cards, all the same height. */
+.viz {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 200px;
+  border-radius: 14px;
+  background: var(--mp-wash);
+  overflow: hidden;
+}
+
+/* 01: Chrome's toolbar and its extensions menu. */
+.viz--pin {
+  align-content: center;
+  justify-items: center;
+  gap: 0;
+}
+.pinviz__bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 248px;
+  padding: 7px 8px 7px 14px;
+  border-radius: 12px 12px 0 0;
+  background: #fff;
+  box-shadow: 0 0 0 1px var(--mp-line);
+}
+.pinviz__url {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: var(--mp-wash);
+  font-size: 11px;
+  color: var(--mp-muted);
+}
+.pinviz__puzzle {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #e8e8e8;
+  color: #3a3a3a;
+  box-shadow: 0 0 0 2px var(--mp-fg);
+}
+.pinviz__menu {
+  width: 248px;
+  padding: 12px 14px 14px;
+  border-radius: 0 0 12px 12px;
+  background: #fff;
+  box-shadow:
+    0 0 0 1px var(--mp-line),
+    0 18px 30px -18px rgb(0 0 0 / 0.25);
+}
+.pinviz__label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--mp-muted);
+}
+.pinviz__row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  background: var(--mp-wash);
+  font-size: 13px;
+  font-weight: 600;
+}
+.pinviz__row .app-icon {
+  margin-left: 0;
+}
+.pinviz__pin {
+  margin-left: auto;
+  color: var(--mp-fg);
+  transform: rotate(35deg);
+}
+
+/* 02: Figma's plugin list. */
+.figviz {
+  width: 248px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow:
+    0 0 0 1px var(--mp-line),
+    0 18px 30px -18px rgb(0 0 0 / 0.25);
+  overflow: hidden;
+}
+.figviz__head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  background: #2c2c2c;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+}
+.figviz__row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px;
+}
+.figviz__row .app-icon {
+  margin-left: 0;
+}
+.figviz__name {
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.figviz__name small {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--mp-muted);
+}
+.figviz__run {
+  margin-left: auto;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--mp-fg);
+  color: var(--mp-bg);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* 03: the ⌘ V keycaps, the bird hopping on them. */
+.viz--keys .keys {
+  padding-top: 50px;
+  margin-top: -14px;
+}
+
+/* ---------- Sources ---------- */
+
+.welcome__sources {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 24px;
+  margin-top: 40px;
+}
+.welcome__sources ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.welcome__sources a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px 8px 11px;
+  border: 1px solid var(--mp-line);
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease;
+}
+@media (hover: hover) {
+  .welcome__sources a:hover {
+    background: var(--mp-wash);
+    border-color: var(--mp-wash);
+  }
+}
+
+/* ---------- Footer ---------- */
+
 .welcome__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 32px;
   margin-top: auto;
-  padding: 48px 0 32px;
+  padding: 64px 0 32px;
+}
+.welcome__links {
+  font-size: 13px;
 }
 
 .app-icon {
@@ -95,4 +448,14 @@
   flex: none;
   margin-left: -5px;
   user-select: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .welcome__out {
+    transition: none;
+  }
+  .board__grid span,
+  .board__palette li {
+    animation: none;
+  }
 }

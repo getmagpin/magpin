@@ -217,6 +217,9 @@ Description Chrome Web Store (anglais, prête à coller) :
 
 ## 4. Une fois les URLs connues, puis après validation
 
+- ✅ 14 novembre 2026 : extension validée et en ligne (https://chromewebstore.google.com/detail/magpin/cickeilgdjpgcdlopkbdjhilmlfpmein). Le site, ses données structurées, `llms.txt` et le README y renvoient. La version 1.0.1 (nouvelle page d'accueil après installation) est à envoyer : **Package → Upload new package**, puis **Submit for review**.
+- Reste à faire quand Figma valide le plugin : `FIGMA_PLUGIN_URL` dans `apps/site/src/links.ts`, le badge Figma du README, puis le tag v1.0.0.
+
 1. **`apps/site/src/links.ts`** : mettre `CHROME_STORE_URL` (`https://chromewebstore.google.com/detail/cickeilgdjpgcdlopkbdjhilmlfpmein`) et `FIGMA_PLUGIN_URL` (`https://www.figma.com/community/plugin/1702182298012784493/magpin`), puis pousser. Le site se redéploie tout seul. Remplacer aussi les deux badges « coming soon » du README par ces liens.
 2. **`apps/extension/src/config.ts`** : si l'URL du plugin n'y était pas au moment de l'envoi, publier la version 1.0.1 avec la bonne URL.
 3. **Git** :

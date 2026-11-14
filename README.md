@@ -12,7 +12,7 @@
 <p align="center">
   <a href="https://magpin.pages.dev"><b>Website</b></a>
   &nbsp;·&nbsp;
-  <a href="#get-magpin"><b>Chrome extension</b></a>
+  <a href="https://chromewebstore.google.com/detail/magpin/cickeilgdjpgcdlopkbdjhilmlfpmein"><b>Chrome extension</b></a>
   &nbsp;·&nbsp;
   <a href="#get-magpin"><b>Figma plugin</b></a>
   &nbsp;·&nbsp;
@@ -82,12 +82,12 @@ The whole story, in plain words: [privacy policy](https://magpin.pages.dev/priva
 Magpin comes in two parts that work together: the Chrome extension collects, the Figma plugin builds.
 
 <p align="center">
-  <img alt="Chrome Web Store: coming soon" src="https://img.shields.io/badge/Chrome_Web_Store-coming_soon-000000?style=for-the-badge&logo=googlechrome&logoColor=ffffff">
+  <a href="https://chromewebstore.google.com/detail/magpin/cickeilgdjpgcdlopkbdjhilmlfpmein"><img alt="Add to Chrome, free" src="https://img.shields.io/badge/Add_to_Chrome-free-000000?style=for-the-badge&logo=googlechrome&logoColor=ffffff"></a>
   &nbsp;
   <img alt="Figma Community: coming soon" src="https://img.shields.io/badge/Figma_Community-coming_soon-000000?style=for-the-badge&logo=figma&logoColor=ffffff">
 </p>
 
-Can't wait? Build both from source in a couple of minutes, below.
+The Figma plugin is in review at Figma. Until it's out, you can build it from source in a couple of minutes, below.
 
 ## Build from source
 

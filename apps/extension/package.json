@@ -1,7 +1,7 @@
 {
   "name": "@magpin/extension",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Magpin Chrome extension (Manifest V3, side panel).",
   "type": "module",
   "scripts": {

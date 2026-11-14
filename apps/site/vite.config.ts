@@ -43,6 +43,9 @@ function inlineCss(): Plugin {
  * What search engines read besides the page: robots.txt, and with the site's
  * address (SITE_URL) a sitemap and structured data describing Magpin.
  */
+/** The extension's page on the Chrome Web Store (as in src/links.ts). */
+const CHROME_STORE = 'https://chromewebstore.google.com/detail/magpin/cickeilgdjpgcdlopkbdjhilmlfpmein';
+
 function seo(): Plugin {
   return {
     name: 'magpin:seo',
@@ -79,6 +82,7 @@ Magpin comes in two parts that work together:
 
 ## Links
 
+- [Chrome extension](${CHROME_STORE}): Magpin on the Chrome Web Store
 - [Website](${site}): what Magpin does, how it works, its features and how it compares
 - [Privacy policy](${site}privacy): what the extension and the plugin read, keep and send
 - [Source code](https://github.com/getmagpin/magpin): the extension, the plugin and the site
@@ -98,7 +102,7 @@ Magpin comes in two parts that work together:
         '@context': 'https://schema.org',
         '@graph': [
           { '@type': 'WebSite', '@id': `${site}#website`, url: site, name: 'Magpin', description, inLanguage: 'en', publisher: { '@id': `${site}#magpin` } },
-          { '@type': 'Organization', '@id': `${site}#magpin`, name: 'Magpin', url: site, logo: `${site}icon.png`, sameAs: ['https://github.com/getmagpin/magpin'] },
+          { '@type': 'Organization', '@id': `${site}#magpin`, name: 'Magpin', url: site, logo: `${site}icon.png`, sameAs: ['https://github.com/getmagpin/magpin', CHROME_STORE] },
           {
             '@type': 'SoftwareApplication',
             name: 'Magpin',
@@ -111,6 +115,8 @@ Magpin comes in two parts that work together:
             isAccessibleForFree: true,
             license: 'https://opensource.org/licenses/MIT',
             offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+            installUrl: CHROME_STORE,
+            sameAs: [CHROME_STORE, 'https://github.com/getmagpin/magpin'],
             featureList: [
               'Collect boards from Pinterest, Are.na, Cosmos and Savee',
               'Paste them into Figma or FigJam as a moodboard',
